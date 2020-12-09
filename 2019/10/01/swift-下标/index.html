@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="当前明月的博客">
 <meta property="og:description" content="一 下标的定义12345678910111213141516171819202122232425class Point &amp;#123;    var x=0.0, y=0.0    subscript(index:Int) -&amp;gt;Double &amp;#123;        set &amp;#123;            if index % 2 == 0 &amp;#123;               x">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-12-06T05:39:52.819Z">
+<meta property="og:updated_time" content="2020-12-09T14:10:40.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift 下标">
 <meta name="twitter:description" content="一 下标的定义12345678910111213141516171819202122232425class Point &amp;#123;    var x=0.0, y=0.0    subscript(index:Int) -&amp;gt;Double &amp;#123;        set &amp;#123;            if index % 2 == 0 &amp;#123;               x">
@@ -175,9 +175,8 @@
 <p>使用subscript可以给任意类型,枚举,结构体,类增加下标功能,也可叫做下标脚本</p>
 <p>subscript 中定义的返回值类型决定了:</p>
 <ul>
-<li><p>get方法的返回值类型</p>
-</li>
-<li><p>set方法中newValue的类型</p>
+<li>get方法的返回值类型</li>
+<li>set方法中newValue的类型<a id="more"></a>
 </li>
 </ul>
 <h5 id="二-下标的本质"><a href="#二-下标的本质" class="headerlink" title="二 下标的本质"></a>二 下标的本质</h5><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x=<span class="number">0.0</span>, y=<span class="number">0.0</span></span><br><span class="line">    subscript(index:<span class="type">Int</span>) -&gt;Double &#123;</span><br><span class="line">        <span class="keyword">set</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> index % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">               x = <span class="keyword">new</span><span class="type">Value</span></span><br><span class="line"><span class="type"></span>            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               y = <span class="keyword">new</span><span class="type">Value</span></span><br><span class="line"><span class="type"></span>            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">           <span class="keyword">if</span> index % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">               <span class="keyword">return</span> x</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               <span class="keyword">return</span> y</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = Point()</span><br><span class="line">p[<span class="number">0</span>] = <span class="number">22.2</span></span><br><span class="line">let x = p[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>

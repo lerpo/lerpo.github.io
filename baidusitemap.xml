@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://example.com/2019/10/06/swift-%E7%BB%A7%E6%89%BF/</loc>
+    <loc>http://example.com/2019/10/01/swift-%E4%B8%8B%E6%A0%87/</loc>
     <lastmod>2020-12-09</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2019/10/01/swift-%E4%B8%8B%E6%A0%87/</loc>
-    <lastmod>2020-12-06</lastmod>
+    <loc>http://example.com/2019/10/06/swift-%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2020-12-09</lastmod>
   </url>
   <url>
     <loc>http://example.com/2019/09/30/swift-%E6%96%B9%E6%B3%95/</loc>
