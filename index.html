@@ -152,6 +152,448 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift-元类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/15/swift-元类型/">swift 元类型</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/15/swift-元类型/" class="archive-article-date">
+  	<time datetime="2019-11-15T12:52:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-初识元类型"><a href="#一-初识元类型" class="headerlink" title="一 初识元类型"></a>一 初识元类型</h5><p>swift提供了两种特殊的类型:<strong>Any</strong>, <strong>AnyObject</strong></p>
+<ul>
+<li><strong>Any</strong>: 可以代表任意类型</li>
+</ul>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> stu:Any = <span class="number">10</span></span><br><span class="line">stu = <span class="string">"Jack"</span></span><br><span class="line">stu = Student()</span><br></pre></td></tr></table></figure>
+<p>stu是Any类型,赋值给它啥都行</p>
+<ul>
+<li><strong>AnyObject</strong>:可以代表任意类类型</li>
+</ul>
+<figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">protocol Runnable:<span class="keyword">AnyObject</span> &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="keyword">Person</span>: <span class="keyword">Runnable</span> &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="keyword">Size</span>: <span class="keyword">Runnable</span> &#123; //❌</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在协议后面写上AnyObect 代表只有类才能遵守这个协议</p>
+<h5 id="二-类型判断与转换-is-as-as-as"><a href="#二-类型判断与转换-is-as-as-as" class="headerlink" title="二 类型判断与转换(is as? as! as)"></a>二 类型判断与转换(is as? as! as)</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>: <span class="title">Person</span>,<span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Student run"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">study</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"student study"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> stu: <span class="type">Any</span> = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(stu <span class="keyword">is</span> <span class="type">Int</span>) <span class="comment">//true</span></span><br><span class="line">stu = <span class="string">"Jack"</span></span><br><span class="line"><span class="built_in">print</span>(stu <span class="keyword">is</span> <span class="type">String</span>) <span class="comment">//true</span></span><br><span class="line">stu = <span class="type">Student</span>()</span><br><span class="line"><span class="built_in">print</span>(stu <span class="keyword">is</span> <span class="type">Person</span>)<span class="comment">//true</span></span><br><span class="line"><span class="built_in">print</span>(stu <span class="keyword">is</span> <span class="type">Student</span>)<span class="comment">//true</span></span><br><span class="line"><span class="built_in">print</span>(stu <span class="keyword">is</span> <span class="type">Runnable</span>)<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">stu = <span class="number">10</span></span><br><span class="line">(stu <span class="keyword">as</span>? <span class="type">Student</span>)?.study() <span class="comment">//没有调用study stu转换student失败,可选链断了,就不会在后续c调用了</span></span><br><span class="line">stu = <span class="type">Student</span>()</span><br><span class="line">(stu <span class="keyword">as</span>? <span class="type">Student</span>)?.study() <span class="comment">//student study</span></span><br><span class="line">(stu <span class="keyword">as</span>! <span class="type">Student</span>).study()  <span class="comment">//student study</span></span><br><span class="line">(stu <span class="keyword">as</span>? <span class="type">Runnable</span>)?.run()  <span class="comment">//Student run</span></span><br></pre></td></tr></table></figure>
+<p>is 用来判断是否为某种类型,as用来做强制类型转换<br>as 100%能转,as! 转了就强制解包,失败就崩溃, as? 转了后为可选项失败就为nil</p>
+<h5 id="三-X-self-X-Type-AnyClass-X代表类"><a href="#三-X-self-X-Type-AnyClass-X代表类" class="headerlink" title="三 X.self   X.Type, AnyClass (X代表类)"></a>三 X.self   X.Type, AnyClass (X代表类)</h5><ol>
+<li>X.self是一个元类型(metadata)的指针,    metadata存放着类型相关信息</li>
+<li>X.self属于X.Type类型</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> s = Student()</span><br><span class="line"><span class="keyword">var</span> pType:Student.<span class="built_in">Type</span> = Student.self <span class="comment">//X.self属于X.Type类型</span></span><br><span class="line">``` </span><br><span class="line">![](../assets/blogImg/yuanleixing01.png)</span><br><span class="line">pType 指向的就是s地址内容的前<span class="number">8</span>个字节</span><br></pre></td></tr></table></figure>
+<p>class Person {</p>
+<p>}<br>class Student :Person {}<br>var anyType: AnyObject.Type = Person.self<br>anyType = Student.self<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父类类型可以指向子类类型</span><br></pre></td></tr></table></figure></p>
+<p>class Person {</p>
+<p>}<br>class Student :Person {}</p>
+<p>public typealias AnyClass = AnyObject.Type<br>var anyType:AnyClass = Person.self<br>anyType = Student.self<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### <span class="number">3</span> AnyClass 就是AnyObject.Type的别名,代表任意类类型的类型</span><br><span class="line"></span><br><span class="line">-----</span><br></pre></td></tr></table></figure></p>
+<p>class Person {</p>
+<p>}<br>class Student :Person {}<br>var per = Person()<br>var perType = type(of: per) //Person.self<br>print(Person.self == type(of: per))//true<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">type(of</span>: per) 就是取出per对象的前8个字节,及类型信息</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 四 元类型的应用</span><br></pre></td></tr></table></figure></p>
+<p>class TabBarViewController: UITabBarController {</p>
+<pre><code>override func viewDidLoad() {
+    super.viewDidLoad()
+    setValue(TabBar(), forKey: &quot;tabBar&quot;)
+    tabBar.tintColor = UIColor.orange
+    addChildConroller(&quot;首页&quot;,&quot;news&quot;,&quot;news&quot;, HomeViewController.self)
+    addChildConroller(&quot;发现&quot;,&quot;find&quot;,&quot;find&quot;, FindViewController.self)
+    addChildConroller(&quot;我的&quot;,&quot;mine&quot;,&quot;mine&quot;, MineViewController.self)
+}
+
+
+func addChildConroller(_ title:String,
+    _ image:String,
+    _ selectImage:String,
+    _ type:UIViewController.Type)-&gt;(){
+    let child = NavigationController(rootViewController: type.init()) //元类型初始化实例
+    child.setValue(NavigationBar(), forKey: &quot;navigationBar&quot;)
+    child.title = title
+    child.tabBarItem.image = UIImage(named: image)
+    child.tabBarItem.selectedImage = UIImage(named: selectImage)
+    child.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.orange], for: .selected)
+
+    addChild(child)
+}
+</code></pre><p>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">动态添加app底部菜单栏</span><br><span class="line"></span><br><span class="line">##### 五 大写的Self</span><br><span class="line">Self代表当前类型,一般用作返回值类型,限定返回值跟方法调用者必须是同一类型,类似于OC的instanceType</span><br></pre></td></tr></table></figure></p>
+<p>protocol Runnable {<br>    func test() -&gt; Self<br>}</p>
+<p>class Person: Runnable {<br>    required init() {} //使用元类型初始化,必须是required<br>    func test() -&gt; Self {<br>        type(of: self).init()<br>    }<br>}<br>class Student: Person {</p>
+<p>}<br>var p = Person()<br>print(p.test()) //Person<br>var stu = Student()<br>print(stu.test()) //Student<br><code>`</code></p>
+<p>类初始化器需要required 结构体不需要,类有继承,结构体没有继承.要保证子类一定要实现它的初始化方法因为test方法里面使用的是 type(of: self).init(),那么怎么保证每个类都有init()方法呢,那就在父类中加reqiured,这样子类中都必须要定义init()方法, 那么就可以统一的调用 type(of: self).init()了,如果不定义required,那么子类有可能就不会实现init()方法,那么调用test方法就会报错</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/15/swift-元类型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-swift-协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/swift-协议/">swift 协议</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/swift-协议/" class="archive-article-date">
+  	<time datetime="2019-11-12T11:31:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-初识协议"><a href="#一-初识协议" class="headerlink" title="一 初识协议"></a>一 初识协议</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Drawble</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">draw</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">var</span> x: <span class="type">Int</span> &#123; <span class="keyword">get</span> <span class="keyword">set</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> y: <span class="type">Int</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    <span class="keyword">subscript</span>(index:<span class="type">Int</span>)-&gt;<span class="type">Int</span> &#123; <span class="keyword">get</span> <span class="keyword">set</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Test1</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCase</span>: <span class="title">Drawble</span>,<span class="title">Test1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">draw</span><span class="params">()</span></span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> x: <span class="type">Int</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> y: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">init</span>(x:<span class="type">Int</span>,y:<span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.x = x</span><br><span class="line">        <span class="keyword">self</span>.y = y</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">subscript</span>(index: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">           index</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">set</span> &#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用<strong>protocol</strong>来声明一个协议,协议可以用来定义<strong>方法</strong>,<strong>属性</strong>,<strong>下标</strong>的声明,协议可以被枚举,结构体,类遵守(多个协议之间用逗号分隔)</p>
+<p>协议中定义方法时不能有默认参数值<br>
+        
+          <a class="article-more-a" href="/2019/11/12/swift-协议/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/swift-协议/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-swift-可选链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/25/swift-可选链/">swift 可选链</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/25/swift-可选链/" class="archive-article-date">
+  	<time datetime="2019-10-25T10:52:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> price  = <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> weight = <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name:<span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">var</span> dog:<span class="type">Dog</span> = <span class="type">Dog</span>()</span><br><span class="line">    <span class="keyword">var</span> car:<span class="type">Car?</span> = <span class="type">Car</span>()</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">age</span><span class="params">()</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="number">20</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"person eat"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">getName</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">subscript</span>(index:<span class="type">Int</span>)-&gt;<span class="type">Int</span>&#123;</span><br><span class="line">        index</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person: <span class="type">Person?</span> = <span class="type">Person</span>()</span><br><span class="line"><span class="keyword">var</span> age1 = person!.age()<span class="comment">//Int</span></span><br><span class="line"><span class="keyword">var</span> age2 = person?.age()<span class="comment">//Int?</span></span><br><span class="line"><span class="keyword">var</span> name = person?.name <span class="comment">//String?</span></span><br><span class="line"><span class="keyword">var</span> index = person?[<span class="number">6</span>]<span class="comment">//Int?</span></span><br><span class="line">person?.name = person?.getName() <span class="keyword">as</span>! <span class="type">String</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>如果可选项为nil,调用方法,下标,属性失败,结果为nil</li>
+<li>如果可选项不为nil,调用方法,下标,属性成功,结果会被包装成可选项</li>
+<li>如果结果本来就是可选项,不会进行再次包装</li>
+</ol>
+        
+          <a class="article-more-a" href="/2019/10/25/swift-可选链/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/25/swift-可选链/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-swift-初始化器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/20/swift-初始化器/">swift 初始化器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/20/swift-初始化器/" class="archive-article-date">
+  	<time datetime="2019-10-20T08:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-初始化器种类-只针对一类"><a href="#一-初始化器种类-只针对一类" class="headerlink" title="一 初始化器种类(只针对一类)"></a>一 初始化器种类(只针对一类)</h5><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">struct Ract &#123;</span><br><span class="line">    <span class="built_in">var</span> <span class="built_in">width</span>:Int = <span class="number">0</span></span><br><span class="line">    <span class="built_in">var</span> <span class="built_in">height</span>:Int = <span class="number">0</span></span><br><span class="line">    init(<span class="built_in">width</span>:Int) &#123;</span><br><span class="line">        self.<span class="built_in">width</span> = <span class="built_in">width</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Size &#123;</span><br><span class="line">    <span class="built_in">var</span> <span class="built_in">width</span>:Int = <span class="number">0</span></span><br><span class="line">    <span class="built_in">var</span> <span class="built_in">height</span>:Int = <span class="number">0</span></span><br><span class="line">    init(<span class="built_in">width</span>:Int) &#123;</span><br><span class="line">        self.<span class="built_in">width</span> = <span class="built_in">width</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">var</span> s = Size(<span class="built_in">width</span>: <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<p>类,结构体,枚举都可以定义初始化器</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Size</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> width:<span class="built_in">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> height:<span class="built_in">Int</span> = <span class="number">0</span></span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> s = Size()</span><br></pre></td></tr></table></figure>
+<p>如果我们没有指定初始化器,编译器会默认给我们生成一个初始化器,如果我们指定了初始化器,编译器不会再给我们生成默认的,指定初始化器,要保证类的成员变量都能够初始化<br>
+        
+          <a class="article-more-a" href="/2019/10/20/swift-初始化器/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/20/swift-初始化器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-swift-多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/15/swift-多态/">swift 多态</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/15/swift-多态/" class="archive-article-date">
+  	<time datetime="2019-10-15T02:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-多态概念"><a href="#一-多态概念" class="headerlink" title="一 多态概念"></a>一 多态概念</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">speak</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Animal speak"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Animal eat"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sleep</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Animal sleep"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:<span class="title">Animal</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">speak</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Dog speak"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Dog eat"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Dog run"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> anim = <span class="type">Animal</span>()</span><br><span class="line">anim.speak()</span><br><span class="line">anim.eat()</span><br><span class="line">anim.sleep()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"----------"</span>)</span><br><span class="line">anim = <span class="type">Dog</span>()</span><br><span class="line">anim.speak()</span><br><span class="line">anim.eat()</span><br><span class="line">anim.sleep()</span><br><span class="line"><span class="comment">//Animal speak</span></span><br><span class="line"><span class="comment">//Animal eat</span></span><br><span class="line"><span class="comment">//Animal sleep</span></span><br><span class="line"><span class="comment">//----------</span></span><br><span class="line"><span class="comment">//Dog speak</span></span><br><span class="line"><span class="comment">//Dog eat</span></span><br><span class="line"><span class="comment">//Animal sleep</span></span><br></pre></td></tr></table></figure>
+<p><strong>多态</strong>: 父类型的引用指向子类型的对象<br>
+        
+          <a class="article-more-a" href="/2019/10/15/swift-多态/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/15/swift-多态/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift-继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -394,420 +836,9 @@
 
 
   
-    <article id="post-swift-属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/15/swift-属性/">swift 属性</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/15/swift-属性/" class="archive-article-date">
-  	<time datetime="2019-09-15T09:00:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>swift 属性分为两大类: 实例属性和类型属性,.实例属性又分为:存储实例属性和计算实例属性, 类型属性分为: 存储类型属性和计算类型属性</p>
-</blockquote>
-<h5 id="一-实例存储属性"><a href="#一-实例存储属性" class="headerlink" title="一 实例存储属性"></a>一 实例存储属性</h5><figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">struct Point &#123;</span><br><span class="line">    <span class="keyword">var</span> x:<span class="keyword">Int</span></span><br><span class="line">    <span class="keyword">var</span> y:<span class="keyword">Int</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = Point(x:<span class="number">10</span>,y:<span class="number">20</span>)</span><br><span class="line"><span class="keyword">print</span>(MemoryLayout.stride(ofValue: p))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x:<span class="keyword">Int</span></span><br><span class="line">    <span class="keyword">var</span> y:<span class="keyword">Int</span></span><br><span class="line">    init(x:<span class="keyword">Int</span>,y:<span class="keyword">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.x = x</span><br><span class="line">        <span class="keyword">self</span>.y = y</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>相当于成员变量,属性存储在实例的内存中,只有结构体和类可以定义实例存储属性,枚举不可以定义存储属性.</p>
-<p><strong>1 枚举为什么不可以定义存储属性呢?</strong></p>
-<p>首先存储属性是存储在实例内存中的,而枚举实例值存储了case相关值标识,比如枚举原始值,只占1个字节,这里的枚举是无法存储你定义其它非case变量的</p>
-        
-          <a class="article-more-a" href="/2019/09/15/swift-属性/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">swifts</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/15/swift-属性/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/02/swift-闭包/">swift 闭包</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/02/swift-闭包/" class="archive-article-date">
-  	<time datetime="2019-09-02T07:04:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-闭包的定义"><a href="#一-闭包的定义" class="headerlink" title="一 闭包的定义"></a>一 闭包的定义</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typealias</span> <span class="type">Fn</span> = (<span class="type">Int</span>) -&gt; <span class="type">Int</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getFn</span><span class="params">()</span></span> -&gt;<span class="type">Fn</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">plus</span><span class="params">(<span class="number">_</span> i:Int)</span></span> -&gt; <span class="type">Int</span>&#123;</span><br><span class="line">        num += i</span><br><span class="line">        <span class="keyword">return</span> num</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> plus</span><br><span class="line">&#125; <span class="comment">// 返回的plus和num形成了闭包</span></span><br><span class="line"><span class="keyword">var</span> fn1 = getFn()</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">1</span>)) <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
-<p>一个函数和它所捕获的变量或常量环境组合起来，称为 <strong>闭包</strong></p>
-<ul>
-<li><p>一般指定义在函数内部的函数</p>
-</li>
-<li><p>一般它捕获的是外层函数的局部变量或常量</p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/09/02/swift-闭包/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/02/swift-闭包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-结构体和类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/01/swift-结构体和类/">swift 结构体和类</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/01/swift-结构体和类/" class="archive-article-date">
-  	<time datetime="2019-09-01T02:40:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-结构体"><a href="#一-结构体" class="headerlink" title="一 结构体"></a>一 结构体</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  struct Date &#123;</span><br><span class="line">    var year: Int</span><br><span class="line">    var month: Int</span><br><span class="line">    var day: Int</span><br><span class="line">&#125;</span><br><span class="line">var date = Date(year: <span class="number">2019</span>, month: <span class="number">6</span>, day: <span class="number">20</span>)</span><br><span class="line">print(date.year,date.month,date.day)<span class="regexp">//</span><span class="number">2019</span> <span class="number">6</span> <span class="number">20</span></span><br><span class="line"><span class="regexp">//</span>Program ended with <span class="keyword">exit</span> code: <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>swift标准库中，绝大多数的公开类型都是结构体，枚举只占很小一部分，像，Bool, Int, Double, String, Array, Dictionary等常见类型都是结构体</p>
-<h5 id="二-结构体的初始化器"><a href="#二-结构体的初始化器" class="headerlink" title="二 结构体的初始化器"></a>二 结构体的初始化器</h5><p><img src="../assets/blogImg/jiegouti01.png" alt></p>
-<p>❌错误改正图片中最后一个date4 要改成date5，提示是对的</p>
-<p>所有的结构体都有一个编译器自动生成的初始化器（initializer）</p>
-<p>编译器会根据情况，可能会为结构体生成多个初始化器，<strong>它要保证所有成员都有初始值</strong></p>
-<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">struct <span class="built_in">Date</span> &#123;</span><br><span class="line">    var <span class="built_in">year</span>: <span class="built_in">Int</span>?</span><br><span class="line">    var <span class="built_in">month</span>: <span class="built_in">Int</span>?</span><br><span class="line">    var <span class="built_in">day</span>: <span class="built_in">Int</span>?</span><br><span class="line">&#125;</span><br><span class="line">var <span class="built_in">date</span> =  <span class="built_in">Date</span>(<span class="built_in">year</span>: <span class="number">2019</span>, <span class="built_in">month</span>: <span class="number">6</span>, <span class="built_in">day</span>: <span class="number">20</span>)</span><br><span class="line">var date2 = <span class="built_in">Date</span>(<span class="built_in">year</span>: <span class="number">2019</span>)</span><br><span class="line">var date3 = <span class="built_in">Date</span>(<span class="built_in">month</span>: <span class="number">6</span>)</span><br><span class="line">var date4 = <span class="built_in">Date</span>(<span class="built_in">day</span>: <span class="number">20</span>)</span><br><span class="line">var date5 = <span class="built_in">Date</span>()</span><br></pre></td></tr></table></figure>
-<p>这个会报错么，能编译通过么？？</p>
-<p>不会报错，可选项都有个默认值nil，编译器会生成多个初始化方法，同时它也能保证所有变量都有初始值</p>
-        
-          <a class="article-more-a" href="/2019/09/01/swift-结构体和类/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/swift-结构体和类/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift枚举" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/swift枚举/">swift枚举</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/28/swift枚举/" class="archive-article-date">
-  	<time datetime="2019-08-28T02:45:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-枚举的基本用法"><a href="#一-枚举的基本用法" class="headerlink" title="一 枚举的基本用法"></a>一 枚举的基本用法</h5><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Direction</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> north</span><br><span class="line">    <span class="keyword">case</span> south</span><br><span class="line">    <span class="keyword">case</span> east</span><br><span class="line">    <span class="keyword">case</span> west</span><br><span class="line">&#125;</span><br><span class="line">var dir = Direction.west</span><br><span class="line">dir = .north</span><br><span class="line">print(dir)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Season</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> spring, summer,autumn, winter</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var season = Season.summer</span><br><span class="line">switch season &#123;</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">spring:</span></span><br><span class="line">    print(<span class="string">"spring"</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">summer:</span></span><br><span class="line">    print(<span class="string">"summer"</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">autumn:</span></span><br><span class="line">    print(<span class="string">"autumn"</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">winter:</span></span><br><span class="line">    print(<span class="string">"winter"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于有限固定值的定义成枚举比较合适,比如,季节,请求状态,物流流转状态,订单状态,等等</p>
-<h5 id="二-关联值"><a href="#二-关联值" class="headerlink" title="二 关联值"></a>二 关联值</h5><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Score</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> points(Int)</span><br><span class="line">    <span class="keyword">case</span> grade(Character)</span><br><span class="line">&#125;</span><br><span class="line">var score = Score.points(<span class="number">96</span>)</span><br><span class="line">score = .grade(<span class="string">"A"</span>)</span><br><span class="line">switch score &#123;</span><br><span class="line"><span class="keyword">case</span> let .points(point):</span><br><span class="line">    print(point)</span><br><span class="line"><span class="keyword">case</span> .grade(var grade):</span><br><span class="line">    grade = <span class="string">"B"</span></span><br><span class="line">    print(grade)</span><br><span class="line">&#125;/<span class="regexp">/B</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/Program ended with exit code: 0</span></span><br></pre></td></tr></table></figure>
-<p>可在.points前面整体定义 它定义什么类型，那三个变量就是什么类型，var 或let,也可以单独定义比如.grade<br>关联值是存储在枚举变量内存里面的</p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Password &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="built_in">number</span>(<span class="built_in">Int</span>,<span class="built_in">Int</span>,<span class="built_in">Int</span>,<span class="built_in">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> gesture(<span class="built_in">String</span>)</span><br><span class="line">&#125;</span><br><span class="line">var pwd = Password.<span class="built_in">number</span>(<span class="number">5</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">6</span>)</span><br><span class="line">pwd = .gesture(<span class="string">"13456"</span>)</span><br><span class="line"><span class="keyword">switch</span> pwd &#123;</span><br><span class="line"><span class="keyword">case</span> let .<span class="built_in">number</span>(n1, n2, n3, n4):</span><br><span class="line">    print(n1,n2,n3,n4)</span><br><span class="line"><span class="keyword">case</span>  .gesture(let gesture):</span><br><span class="line">    print(gesture)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>密码有数字密码和手势密码,这两种方式是固定的,对于有限固定值我们定义成枚举,但是每个人定义设定的数字和手势密码都不同,那我们就定义几个关联值,与这个枚举进行关联</p>
-        
-          <a class="article-more-a" href="/2019/08/28/swift枚举/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/swift枚举/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-可选项-Optional" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/21/swift-可选项-Optional/">swift 可选项(Optional)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/21/swift-可选项-Optional/" class="archive-article-date">
-  	<time datetime="2019-08-21T11:32:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-可选项定义"><a href="#一-可选项定义" class="headerlink" title="一 可选项定义"></a>一 可选项定义</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name:<span class="type">String?</span> = <span class="string">"Jack"</span></span><br><span class="line">name = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> age:<span class="type">Int?</span></span><br><span class="line">age = <span class="number">10</span></span><br><span class="line">age = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">15</span>,<span class="number">40</span>,<span class="number">29</span>]</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">get</span><span class="params">(<span class="number">_</span> index:Int)</span></span> -&gt; <span class="type">Int?</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> index &lt; <span class="number">0</span> || index &gt;= array.<span class="built_in">count</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array[index]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">get</span>(<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">get</span>(-<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">get</span>(<span class="number">4</span>))<span class="comment">//Optional(15)</span></span><br><span class="line"><span class="comment">//nil</span></span><br><span class="line"><span class="comment">//nil</span></span><br></pre></td></tr></table></figure>
-<p>可选项,一般也叫可选类型,它允许将值设置为nil,在类型名称后面加个问号❓来定义一个可选项, 通过打印我们看到可选项打印出来是Optional(15),那么这个Optional(15)我们该怎么用呢</p>
-<h5 id="二-强制解包"><a href="#二-强制解包" class="headerlink" title="二 强制解包"></a>二 强制解包</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var age:Int? = <span class="number">10</span></span><br><span class="line">var ageInt:Int = age!</span><br><span class="line">ageInt += <span class="number">10</span></span><br><span class="line">print(ageInt)<span class="regexp">//</span><span class="number">20</span></span><br><span class="line"><span class="regexp">//</span>Program ended with <span class="keyword">exit</span> code: <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>如果要从可选项中取出被包装的数据,需要使用感叹号❕</p>
-<p><img src="../assets/blogImg/kexuanxiang01.png" alt><br>对值为nil的可选项进行强制解包,将会产生运行时错误</p>
-<h5 id="判断可选项是否包含值"><a href="#判断可选项是否包含值" class="headerlink" title="判断可选项是否包含值"></a>判断可选项是否包含值</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number = <span class="type">Int</span>(<span class="string">"123"</span>)</span><br><span class="line"><span class="keyword">if</span> number != <span class="literal">nil</span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"字符串转换整数成功:\(number)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"字符串转换整数失败"</span>)</span><br><span class="line">&#125;<span class="comment">//字符串转换整数成功:Optional(123)</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/08/21/swift-可选项-Optional/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/21/swift-可选项-Optional/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 

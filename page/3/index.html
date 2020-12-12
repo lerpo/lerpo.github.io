@@ -12,7 +12,7 @@
 <meta name="keywords" content="前端,js,jquery,javascript,html5,移动端,ios,android,react native,vue.js,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
 <meta property="og:type" content="website">
 <meta property="og:title" content="当前明月的博客">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/page/3/index.html">
 <meta property="og:site_name" content="当前明月的博客">
 <meta property="og:description" content="移动端，前端，后端，运维，全都会，如果你认为啥都会就等于啥都不会，那你就错了，哥不仅会还精通，你说气人不。">
 <meta property="og:locale" content="default">
@@ -152,20 +152,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-swift-属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Swift简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/15/swift-属性/">swift 属性</a>
+      <a class="article-title" href="/2019/07/20/Swift简介/">Swift简介</a>
     </h1>
   
 
         
-        <a href="/2019/09/15/swift-属性/" class="archive-article-date">
-  	<time datetime="2019-09-15T09:00:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
+        <a href="/2019/07/20/Swift简介/" class="archive-article-date">
+  	<time datetime="2019-07-20T15:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
 </a>
         
       </header>
@@ -173,14 +173,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>swift 属性分为两大类: 实例属性和类型属性,.实例属性又分为:存储实例属性和计算实例属性, 类型属性分为: 存储类型属性和计算类型属性</p>
+<p>Swift是Apple在2014年6月WWDC发布的全新编程语言，中文名和LOGO是“雨燕” Swift之父Chris Lattner pClang编译器作者、LLVM项目的主要发起人 从Apple离职后，先后跳槽到Tesla、Google p目前在Google Brain从事AI研究</p>
 </blockquote>
-<h5 id="一-实例存储属性"><a href="#一-实例存储属性" class="headerlink" title="一 实例存储属性"></a>一 实例存储属性</h5><figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">struct Point &#123;</span><br><span class="line">    <span class="keyword">var</span> x:<span class="keyword">Int</span></span><br><span class="line">    <span class="keyword">var</span> y:<span class="keyword">Int</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = Point(x:<span class="number">10</span>,y:<span class="number">20</span>)</span><br><span class="line"><span class="keyword">print</span>(MemoryLayout.stride(ofValue: p))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x:<span class="keyword">Int</span></span><br><span class="line">    <span class="keyword">var</span> y:<span class="keyword">Int</span></span><br><span class="line">    init(x:<span class="keyword">Int</span>,y:<span class="keyword">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.x = x</span><br><span class="line">        <span class="keyword">self</span>.y = y</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>相当于成员变量,属性存储在实例的内存中,只有结构体和类可以定义实例存储属性,枚举不可以定义存储属性.</p>
-<p><strong>1 枚举为什么不可以定义存储属性呢?</strong></p>
-<p>首先存储属性是存储在实例内存中的,而枚举实例值存储了case相关值标识,比如枚举原始值,只占1个字节,这里的枚举是无法存储你定义其它非case变量的</p>
+<p>历时5年发展，从Swift1.x发展到了Swift5.x版本，经历了多次重大改变，<strong>ABI</strong>终于稳定 <strong>API(Application Programming Interface)</strong>:应用程序编程接口</p>
+<p>源代码和库之间的接口<br>ABI(Application Binary Interface):应用程序二进制接口<br> 应用程序与操作系统之间的底层接口<br>涉及的内容有: <strong>目标文件格式、数据类型的大小\布局\对齐、函数调用约定等等 </strong>  随着ABI的稳定，Swift语法基本不会再有太大的变动,截止至2019年6月，目前最新版本:Swift5.1<br>Swift完全开源: <a href="https://github.com/apple/swift" target="_blank" rel="noopener">https://github.com/apple/swift</a>，主要采用C++编写</p>
+<h5 id="一-swift-编译流程"><a href="#一-swift-编译流程" class="headerlink" title="一  swift 编译流程"></a>一  swift 编译流程</h5><p><img src="../assets/blogImg/binyiliucheng1.png" alt="编译流程"><br>首先我们要知道编译器分为前端和后端：<br>前端：词法分析<br>后端：生成对应平台的二进制代码</p>
+<p>Swift与OC和C的编译流程区别：C和OC编译器的前端是Clang，也就是以前的OC代码通过Clang这个编译器的前端进行处理，转交给LLVM这个编译器的后端，最后生成ARM的二进制代码。而Swift的编译器的前端是swiftc，通过swiftc进行词法分析和语法树处理，然后交给LLVM的后端编译器，最后生成ARM格式的二进制代码<br><img src="../assets/blogImg/bianyiliucheng2.png" alt="编译流程"><br>Swift代码–&gt;通过swiftc生成Swift AST(Swift语法树)–&gt;Raw Swift IL(Swift特有的中间代码)–&gt;Canonical Swift IL(更简洁的Swift代码)–&gt;转交给后端生成LLVM代码–&gt;Assembly(汇编代码)–&gt;Executable(二进制代码)<br><a href="https://swift.org/swift-compiler/" target="_blank" rel="noopener">每个阶段具体介绍</a></p>
         
-          <a class="article-more-a" href="/2019/09/15/swift-属性/#more">more >></a>
+          <a class="article-more-a" href="/2019/07/20/Swift简介/#more">more >></a>
         
       
 
@@ -194,7 +194,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">swifts</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
         		</li>
       		
 		</ul>
@@ -204,7 +204,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/15/swift-属性/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/20/Swift简介/">展开全文 >></a>
         </p>
       
 
@@ -234,36 +234,30 @@
 
 
   
-    <article id="post-swift-闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-微信小程序小票打印功能（以及中文乱码的解决）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/02/swift-闭包/">swift 闭包</a>
+      <a class="article-title" href="/2018/11/10/微信小程序小票打印功能（以及中文乱码的解决）/">微信小程序小票打印功能（以及中文乱码的解决）</a>
     </h1>
   
 
         
-        <a href="/2019/09/02/swift-闭包/" class="archive-article-date">
-  	<time datetime="2019-09-02T07:04:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
+        <a href="/2018/11/10/微信小程序小票打印功能（以及中文乱码的解决）/" class="archive-article-date">
+  	<time datetime="2018-11-10T08:07:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="一-闭包的定义"><a href="#一-闭包的定义" class="headerlink" title="一 闭包的定义"></a>一 闭包的定义</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typealias</span> <span class="type">Fn</span> = (<span class="type">Int</span>) -&gt; <span class="type">Int</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getFn</span><span class="params">()</span></span> -&gt;<span class="type">Fn</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">plus</span><span class="params">(<span class="number">_</span> i:Int)</span></span> -&gt; <span class="type">Int</span>&#123;</span><br><span class="line">        num += i</span><br><span class="line">        <span class="keyword">return</span> num</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> plus</span><br><span class="line">&#125; <span class="comment">// 返回的plus和num形成了闭包</span></span><br><span class="line"><span class="keyword">var</span> fn1 = getFn()</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">1</span>)) <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
-<p>一个函数和它所捕获的变量或常量环境组合起来，称为 <strong>闭包</strong></p>
-<ul>
-<li><p>一般指定义在函数内部的函数</p>
-</li>
-<li><p>一般它捕获的是外层函数的局部变量或常量</p>
-</li>
-</ul>
+        <p>因为业务需求，需要实现微信小程序连接热敏打印机打印小票。首先我要先知道微信小程序有没有蓝牙操作相关的API，然后就是如何蓝牙连接打印机，发送打印指令了。</p>
+<p>通过查看<a href="[https://developers.weixin.qq.com/miniprogram/dev/api/wx.writeBLECharacteristicValue.html](https://developers.weixin.qq.com/miniprogram/dev/api/wx.writeBLECharacteristicValue.html">小程序文档</a><br>)，我看到微信小程序是支持蓝牙操作的<br><img src="https://upload-images.jianshu.io/upload_images/1972799-8f242641e7154fc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="小程序文档"><br>但是我看到它有两个，低功耗蓝牙，蓝牙。蓝牙我们知道，低功耗蓝牙是什么东西，网上查了下，解释如下：<br>以前可能有蓝牙1.0、蓝牙2.0、蓝牙3.0、蓝牙4.0之类的以数字结尾的蓝牙版本号，而实际上，在最新的标准中，已经不再使用数字版本号作为蓝牙版本的区分了，取而代之的是经典蓝牙与低功耗蓝牙（BLE）这两种区别<br>低功耗蓝牙（<strong>Bluetooth Low Energy</strong>，或称<strong>Bluetooth LE</strong>、<strong>BLE</strong>，旧商标<strong>Bluetooth Smart</strong>）也称<strong>低功耗蓝牙</strong>，是<a href="https://baike.baidu.com/item/%E8%93%9D%E7%89%99%E6%8A%80%E6%9C%AF%E8%81%94%E7%9B%9F" target="_blank" rel="noopener">蓝牙技术联盟</a>设计和销售的一种个人局域网技术，旨在用于医疗保健、<a href="https://baike.baidu.com/item/%E8%BF%90%E5%8A%A8%E5%81%A5%E8%BA%AB" target="_blank" rel="noopener">运动健身</a>、信标、安防、家庭娱乐等领域的新兴应用。相较经典蓝牙，低功耗蓝牙旨在保持同等通信范围的同时显著降低功耗和成本.<br>
         
-          <a class="article-more-a" href="/2019/09/02/swift-闭包/#more">more >></a>
+          <a class="article-more-a" href="/2018/11/10/微信小程序小票打印功能（以及中文乱码的解决）/#more">more >></a>
         
       
 
@@ -277,7 +271,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
         		</li>
       		
 		</ul>
@@ -287,7 +281,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/02/swift-闭包/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/11/10/微信小程序小票打印功能（以及中文乱码的解决）/">展开全文 >></a>
         </p>
       
 
@@ -317,37 +311,30 @@
 
 
   
-    <article id="post-swift-结构体和类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-我是如何快速上手微信小程序开发的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/01/swift-结构体和类/">swift 结构体和类</a>
+      <a class="article-title" href="/2017/08/23/我是如何快速上手微信小程序开发的/">我是如何快速上手微信小程序开发的</a>
     </h1>
   
 
         
-        <a href="/2019/09/01/swift-结构体和类/" class="archive-article-date">
-  	<time datetime="2019-09-01T02:40:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
+        <a href="/2017/08/23/我是如何快速上手微信小程序开发的/" class="archive-article-date">
+  	<time datetime="2017-08-23T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="一-结构体"><a href="#一-结构体" class="headerlink" title="一 结构体"></a>一 结构体</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  struct Date &#123;</span><br><span class="line">    var year: Int</span><br><span class="line">    var month: Int</span><br><span class="line">    var day: Int</span><br><span class="line">&#125;</span><br><span class="line">var date = Date(year: <span class="number">2019</span>, month: <span class="number">6</span>, day: <span class="number">20</span>)</span><br><span class="line">print(date.year,date.month,date.day)<span class="regexp">//</span><span class="number">2019</span> <span class="number">6</span> <span class="number">20</span></span><br><span class="line"><span class="regexp">//</span>Program ended with <span class="keyword">exit</span> code: <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>swift标准库中，绝大多数的公开类型都是结构体，枚举只占很小一部分，像，Bool, Int, Double, String, Array, Dictionary等常见类型都是结构体</p>
-<h5 id="二-结构体的初始化器"><a href="#二-结构体的初始化器" class="headerlink" title="二 结构体的初始化器"></a>二 结构体的初始化器</h5><p><img src="../assets/blogImg/jiegouti01.png" alt></p>
-<p>❌错误改正图片中最后一个date4 要改成date5，提示是对的</p>
-<p>所有的结构体都有一个编译器自动生成的初始化器（initializer）</p>
-<p>编译器会根据情况，可能会为结构体生成多个初始化器，<strong>它要保证所有成员都有初始值</strong></p>
-<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">struct <span class="built_in">Date</span> &#123;</span><br><span class="line">    var <span class="built_in">year</span>: <span class="built_in">Int</span>?</span><br><span class="line">    var <span class="built_in">month</span>: <span class="built_in">Int</span>?</span><br><span class="line">    var <span class="built_in">day</span>: <span class="built_in">Int</span>?</span><br><span class="line">&#125;</span><br><span class="line">var <span class="built_in">date</span> =  <span class="built_in">Date</span>(<span class="built_in">year</span>: <span class="number">2019</span>, <span class="built_in">month</span>: <span class="number">6</span>, <span class="built_in">day</span>: <span class="number">20</span>)</span><br><span class="line">var date2 = <span class="built_in">Date</span>(<span class="built_in">year</span>: <span class="number">2019</span>)</span><br><span class="line">var date3 = <span class="built_in">Date</span>(<span class="built_in">month</span>: <span class="number">6</span>)</span><br><span class="line">var date4 = <span class="built_in">Date</span>(<span class="built_in">day</span>: <span class="number">20</span>)</span><br><span class="line">var date5 = <span class="built_in">Date</span>()</span><br></pre></td></tr></table></figure>
-<p>这个会报错么，能编译通过么？？</p>
-<p>不会报错，可选项都有个默认值nil，编译器会生成多个初始化方法，同时它也能保证所有变量都有初始值</p>
+        <h6 id="一-如何创建一个微信小程序"><a href="#一-如何创建一个微信小程序" class="headerlink" title="一 如何创建一个微信小程序"></a>一 如何创建一个微信小程序</h6><h6 id="二-如何搭建小程序页面"><a href="#二-如何搭建小程序页面" class="headerlink" title="二 如何搭建小程序页面"></a>二 如何搭建小程序页面</h6><h6 id="三-小程序如何获取数据，处理逻辑"><a href="#三-小程序如何获取数据，处理逻辑" class="headerlink" title="三 小程序如何获取数据，处理逻辑"></a>三 小程序如何获取数据，处理逻辑</h6><h6 id="四-如何发布小程序应用"><a href="#四-如何发布小程序应用" class="headerlink" title="四 如何发布小程序应用"></a>四 如何发布小程序应用</h6><blockquote>
+<p>无论是前端开发，还是后端开发，时间长了，你总会能总结出它的一些规律的，对于前端开发主要就两条，页面展现，逻辑处理。如果是全流程开发的话，那就是，如何创建项目，页面如何实现，数据获取和逻辑处理如何实现，如何打包上线。移动端或者前端，基本开发流程就这个四个步骤。所以在在前端方面去学习新一门开发技术，只要你解决了这四个问题，那一切就OK了，下面我就讲一下，我在学习微信小程序开发，如何用这四步法快速上手开发的<br>
         
-          <a class="article-more-a" href="/2019/09/01/swift-结构体和类/#more">more >></a>
+          <a class="article-more-a" href="/2017/08/23/我是如何快速上手微信小程序开发的/#more">more >></a>
         
       
 
@@ -361,7 +348,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
         		</li>
       		
 		</ul>
@@ -371,413 +358,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/swift-结构体和类/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift枚举" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/swift枚举/">swift枚举</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/28/swift枚举/" class="archive-article-date">
-  	<time datetime="2019-08-28T02:45:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-枚举的基本用法"><a href="#一-枚举的基本用法" class="headerlink" title="一 枚举的基本用法"></a>一 枚举的基本用法</h5><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Direction</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> north</span><br><span class="line">    <span class="keyword">case</span> south</span><br><span class="line">    <span class="keyword">case</span> east</span><br><span class="line">    <span class="keyword">case</span> west</span><br><span class="line">&#125;</span><br><span class="line">var dir = Direction.west</span><br><span class="line">dir = .north</span><br><span class="line">print(dir)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Season</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> spring, summer,autumn, winter</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var season = Season.summer</span><br><span class="line">switch season &#123;</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">spring:</span></span><br><span class="line">    print(<span class="string">"spring"</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">summer:</span></span><br><span class="line">    print(<span class="string">"summer"</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">autumn:</span></span><br><span class="line">    print(<span class="string">"autumn"</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">winter:</span></span><br><span class="line">    print(<span class="string">"winter"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于有限固定值的定义成枚举比较合适,比如,季节,请求状态,物流流转状态,订单状态,等等</p>
-<h5 id="二-关联值"><a href="#二-关联值" class="headerlink" title="二 关联值"></a>二 关联值</h5><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Score</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> points(Int)</span><br><span class="line">    <span class="keyword">case</span> grade(Character)</span><br><span class="line">&#125;</span><br><span class="line">var score = Score.points(<span class="number">96</span>)</span><br><span class="line">score = .grade(<span class="string">"A"</span>)</span><br><span class="line">switch score &#123;</span><br><span class="line"><span class="keyword">case</span> let .points(point):</span><br><span class="line">    print(point)</span><br><span class="line"><span class="keyword">case</span> .grade(var grade):</span><br><span class="line">    grade = <span class="string">"B"</span></span><br><span class="line">    print(grade)</span><br><span class="line">&#125;/<span class="regexp">/B</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/Program ended with exit code: 0</span></span><br></pre></td></tr></table></figure>
-<p>可在.points前面整体定义 它定义什么类型，那三个变量就是什么类型，var 或let,也可以单独定义比如.grade<br>关联值是存储在枚举变量内存里面的</p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Password &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="built_in">number</span>(<span class="built_in">Int</span>,<span class="built_in">Int</span>,<span class="built_in">Int</span>,<span class="built_in">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> gesture(<span class="built_in">String</span>)</span><br><span class="line">&#125;</span><br><span class="line">var pwd = Password.<span class="built_in">number</span>(<span class="number">5</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">6</span>)</span><br><span class="line">pwd = .gesture(<span class="string">"13456"</span>)</span><br><span class="line"><span class="keyword">switch</span> pwd &#123;</span><br><span class="line"><span class="keyword">case</span> let .<span class="built_in">number</span>(n1, n2, n3, n4):</span><br><span class="line">    print(n1,n2,n3,n4)</span><br><span class="line"><span class="keyword">case</span>  .gesture(let gesture):</span><br><span class="line">    print(gesture)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>密码有数字密码和手势密码,这两种方式是固定的,对于有限固定值我们定义成枚举,但是每个人定义设定的数字和手势密码都不同,那我们就定义几个关联值,与这个枚举进行关联</p>
-        
-          <a class="article-more-a" href="/2019/08/28/swift枚举/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/swift枚举/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-可选项-Optional" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/21/swift-可选项-Optional/">swift 可选项(Optional)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/21/swift-可选项-Optional/" class="archive-article-date">
-  	<time datetime="2019-08-21T11:32:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-可选项定义"><a href="#一-可选项定义" class="headerlink" title="一 可选项定义"></a>一 可选项定义</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name:<span class="type">String?</span> = <span class="string">"Jack"</span></span><br><span class="line">name = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> age:<span class="type">Int?</span></span><br><span class="line">age = <span class="number">10</span></span><br><span class="line">age = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">15</span>,<span class="number">40</span>,<span class="number">29</span>]</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">get</span><span class="params">(<span class="number">_</span> index:Int)</span></span> -&gt; <span class="type">Int?</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> index &lt; <span class="number">0</span> || index &gt;= array.<span class="built_in">count</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array[index]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">get</span>(<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">get</span>(-<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">get</span>(<span class="number">4</span>))<span class="comment">//Optional(15)</span></span><br><span class="line"><span class="comment">//nil</span></span><br><span class="line"><span class="comment">//nil</span></span><br></pre></td></tr></table></figure>
-<p>可选项,一般也叫可选类型,它允许将值设置为nil,在类型名称后面加个问号❓来定义一个可选项, 通过打印我们看到可选项打印出来是Optional(15),那么这个Optional(15)我们该怎么用呢</p>
-<h5 id="二-强制解包"><a href="#二-强制解包" class="headerlink" title="二 强制解包"></a>二 强制解包</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var age:Int? = <span class="number">10</span></span><br><span class="line">var ageInt:Int = age!</span><br><span class="line">ageInt += <span class="number">10</span></span><br><span class="line">print(ageInt)<span class="regexp">//</span><span class="number">20</span></span><br><span class="line"><span class="regexp">//</span>Program ended with <span class="keyword">exit</span> code: <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>如果要从可选项中取出被包装的数据,需要使用感叹号❕</p>
-<p><img src="../assets/blogImg/kexuanxiang01.png" alt><br>对值为nil的可选项进行强制解包,将会产生运行时错误</p>
-<h5 id="判断可选项是否包含值"><a href="#判断可选项是否包含值" class="headerlink" title="判断可选项是否包含值"></a>判断可选项是否包含值</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number = <span class="type">Int</span>(<span class="string">"123"</span>)</span><br><span class="line"><span class="keyword">if</span> number != <span class="literal">nil</span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"字符串转换整数成功:\(number)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"字符串转换整数失败"</span>)</span><br><span class="line">&#125;<span class="comment">//字符串转换整数成功:Optional(123)</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/08/21/swift-可选项-Optional/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/21/swift-可选项-Optional/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/15/swift函数/">swift函数</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/15/swift函数/" class="archive-article-date">
-  	<time datetime="2019-08-15T10:59:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-函数的定义"><a href="#一-函数的定义" class="headerlink" title="一 函数的定义"></a>一 函数的定义</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//无参有返回值</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pi</span><span class="params">()</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">3.1415926</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//有参有返回值</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sum</span><span class="params">(v1:Int, v2:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> v1 + v2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//无参无返回值</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayHello</span><span class="params">()</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//有参无返回值</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayWorld</span><span class="params">(v1:Int)</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(v1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>形参默认是let,也只能是let</p>
-<h5 id="二-函数的文档注释"><a href="#二-函数的文档注释" class="headerlink" title="二 函数的文档注释"></a>二 函数的文档注释</h5><figure class="highlight plain"><figcaption><span>返回多个值</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">///</span><br><span class="line">/// 返回两个数的和 差 平均值</span><br><span class="line">///</span><br><span class="line">/// - Parameter v1: 第一个整数</span><br><span class="line">/// - Parameter v2: 第二个整数</span><br><span class="line">/// - Returns: sum:Int, difference:Int, average:Int</span><br><span class="line">///</span><br><span class="line">/// - Note:通过一个元组实现多返回值</span><br><span class="line">func calculate(v1:Int, v2:Int) -&gt; (sum:Int, difference:Int, average:Int) &#123;</span><br><span class="line">    let sum = v1 + v2</span><br><span class="line">    return (sum,v1-v2, sum &gt;&gt; 1)</span><br><span class="line">&#125;</span><br><span class="line">let result = calculate(v1: 20, v2: 10)</span><br></pre></td></tr></table></figure>
-<p>对着函数调用按住option键即可查看注释效果</p>
-<p><img src="../assets/blogImg/hanshu01.jpg" alt><br><a href="https://swift.org/documentation/api-design-guidelines/" target="_blank" rel="noopener">更多注释规范 点此查看</a></p>
-        
-          <a class="article-more-a" href="/2019/08/15/swift函数/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/15/swift函数/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift流程控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/10/swift流程控制/">swift流程控制</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/10/swift流程控制/" class="archive-article-date">
-  	<time datetime="2019-08-10T09:15:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-if-else"><a href="#一-if-else" class="headerlink" title="一 if else"></a>一 if else</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let age = 30</span><br><span class="line"><span class="keyword">if</span> age &gt;= 22 &#123;</span><br><span class="line">    <span class="builtin-name">print</span>(<span class="string">"Get married"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> age &gt;= 18 &#123;</span><br><span class="line">    <span class="builtin-name">print</span>(<span class="string">"Being a adult"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="builtin-name">print</span>(<span class="string">"listening tu ta zi jiao huan"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>if 后面的条件可以省略小括号<br>条件后面的大括号不可以省略<br><img src="../assets/blogImg/if01.jpg" alt><br>if 后面的条件只能是Bool类型</p>
-<h5 id="二-while"><a href="#二-while" class="headerlink" title="二 while"></a>二 while</h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">5</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">num</span> &gt; <span class="number">0</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"num is \(num)"</span>)</span><br><span class="line">    <span class="built_in">num</span> -= <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">-1</span></span><br><span class="line">repeat &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"num2 is \(num2)"</span>)</span><br><span class="line">&#125; <span class="keyword">while</span> num2 &gt; <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>repeat-while相当于C语言中的do-while<br>从Swift3开始,去除了自增(++),自减(–)运算符,为啥去除呢,可能为了更严谨吧.</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> number = <span class="number">0</span></span><br><span class="line">let <span class="selector-tag">b</span> = ++ number + number++</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(b)</span></span> <span class="comment">//?? 你能快速算出b是几么?</span></span><br></pre></td></tr></table></figure>
-<p>swift去除自增自减,也是为了更明确简洁吧.</p>
-        
-          <a class="article-more-a" href="/2019/08/10/swift流程控制/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/10/swift流程控制/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift基础语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/30/swift基础语法/">swift基础语法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/30/swift基础语法/" class="archive-article-date">
-  	<time datetime="2019-07-30T05:42:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一-Hello-World"><a href="#一-Hello-World" class="headerlink" title="一 Hello World"></a>一 Hello World</h4><h4 id="二-注释"><a href="#二-注释" class="headerlink" title="二 注释"></a>二 注释</h4><h4 id="三-常量"><a href="#三-常量" class="headerlink" title="三 常量"></a>三 常量</h4><h4 id="四-标识符"><a href="#四-标识符" class="headerlink" title="四 标识符"></a>四 标识符</h4><h4 id="五-常见数据类型"><a href="#五-常见数据类型" class="headerlink" title="五 常见数据类型"></a>五 常见数据类型</h4><h4 id="六-字面量"><a href="#六-字面量" class="headerlink" title="六 字面量"></a>六 字面量</h4><h4 id="七-元组"><a href="#七-元组" class="headerlink" title="七 元组"></a>七 元组</h4><h5 id="一-Hellow-World"><a href="#一-Hellow-World" class="headerlink" title="一  Hellow World"></a>一  Hellow World</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">helloworld</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello world"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"你好,世界"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">output: 你好,世界</span><br><span class="line">Program ended with <span class="keyword">exit</span> code: <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>1 不用像OC那样需要main函数,Swift会将全局内的首句可执行代码作为程序入口, 其实它还是有main函数的,底层做的,不需要我们手动写了</p>
-<p>2 相比OC我们语句后面也不用写  “ ; ”了,但是多个语句在一行还是需要的.</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let a = <span class="number">10</span></span><br><span class="line">var b = <span class="number">20</span></span><br><span class="line">b = <span class="number">100</span></span><br><span class="line"><span class="regexp">//</span>a = <span class="number">100</span>  xxx</span><br><span class="line">print(a,b)</span><br><span class="line"></span><br><span class="line"><span class="number">10</span> <span class="number">100</span></span><br><span class="line">Program ended with <span class="keyword">exit</span> code: <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>1 用<strong>var</strong> 定义变量, 变量可修改值</p>
-<p>2 用<strong>let</strong> 定义常量,值不可修改</p>
-<p>有点像javasript常 变量的定义</p>
-        
-          <a class="article-more-a" href="/2019/07/30/swift基础语法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/30/swift基础语法/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/08/23/我是如何快速上手微信小程序开发的/">展开全文 >></a>
         </p>
       
 
@@ -809,7 +390,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
     </nav>
   
 
