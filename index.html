@@ -152,6 +152,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift-错误处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/swift-错误处理/">swift 错误处理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/20/swift-错误处理/" class="archive-article-date">
+  	<time datetime="2019-11-20T12:50:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-开发中常见的错误"><a href="#一-开发中常见的错误" class="headerlink" title="一 开发中常见的错误"></a>一 开发中常见的错误</h5><ul>
+<li>语法错误</li>
+</ul>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">10</span></span><br><span class="line">age += <span class="number">20</span> <span class="comment">//❌</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>逻辑错误</li>
+</ul>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if age &gt; <span class="number">10</span> &#123;</span><br><span class="line">    age = <span class="number">10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行时错误(闪退,异常等)</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">func</span> <span class="title">divide</span><span class="params">(<span class="number">_</span> num1:Int, <span class="number">_</span> num2:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    num1 / num2</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(divide(<span class="number">10</span>, <span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/11/20/swift-错误处理/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/20/swift-错误处理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift-元类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -727,86 +814,6 @@ func addChildConroller(_ title:String,
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/01/swift-下标/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/30/swift-方法/">swift 方法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/30/swift-方法/" class="archive-article-date">
-  	<time datetime="2019-09-30T03:44:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-方法简介"><a href="#一-方法简介" class="headerlink" title="一 方法简介"></a>一 方法简介</h5><p>方法分为实例方法和类型方法,枚举,结构体,类都可以定义实例方法,类型方法</p>
-<p><strong>实例方法:</strong> 通过实例对象调用</p>
-<p><strong>类型方法:</strong> 通过类型调用,用static或者class关键字定义</p>
-<h5 id="二-实例方法"><a href="#二-实例方法" class="headerlink" title="二 实例方法"></a>二 实例方法</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">count</span>:<span class="type">Int</span></span><br><span class="line">    <span class="keyword">init</span>() &#123;</span><br><span class="line">        <span class="keyword">self</span>.<span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">getCount</span><span class="params">()</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.<span class="built_in">count</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> car = <span class="type">Car</span>()</span><br><span class="line">car.<span class="built_in">count</span> = <span class="number">20</span></span><br><span class="line"><span class="built_in">print</span>(car.getCount())<span class="comment">//20</span></span><br></pre></td></tr></table></figure>
-<p>实例方法中,self代表实例对象</p>
-        
-          <a class="article-more-a" href="/2019/09/30/swift-方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/30/swift-方法/">展开全文 >></a>
         </p>
       
 
