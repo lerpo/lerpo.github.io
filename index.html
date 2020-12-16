@@ -152,6 +152,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift-泛型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/22/swift-泛型/">swift 泛型</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/22/swift-泛型/" class="archive-article-date">
+  	<time datetime="2019-11-22T12:45:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-泛型初识-写一个泛型函数"><a href="#一-泛型初识-写一个泛型函数" class="headerlink" title="一 泛型初识,写一个泛型函数"></a>一 泛型初识,写一个泛型函数</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func swapValues&lt;T&gt;(_ <span class="selector-tag">a</span>:inout T, _ <span class="selector-tag">b</span>:inout T)&#123;</span><br><span class="line">    (<span class="selector-tag">a</span>,b) = (<span class="selector-tag">b</span>,a)</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">var</span> i1 = <span class="number">10</span></span><br><span class="line"><span class="selector-tag">var</span> i2 = <span class="number">20</span></span><br><span class="line"><span class="function"><span class="title">swap</span><span class="params">(&amp;i1, &amp;i2)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"i1=\(i1),i2=\(i2)"</span>)</span></span></span><br><span class="line"><span class="selector-tag">var</span> i3 = <span class="string">"hello"</span></span><br><span class="line"><span class="selector-tag">var</span> i4 = <span class="string">"world"</span></span><br><span class="line"><span class="function"><span class="title">swap</span><span class="params">(&amp;i3, &amp;i4)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"i3=\(i3),i4=\(i4)"</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>泛型可以将类型参数化,提高代码复用率,减少代码量</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">swapValues</span>&lt;T&gt;<span class="params">(<span class="number">_</span> a:<span class="keyword">inout</span> T, <span class="number">_</span> b:<span class="keyword">inout</span> T)</span></span>&#123;</span><br><span class="line">    (a,b) = (b,a)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> i1 = <span class="number">10</span></span><br><span class="line"><span class="keyword">var</span> i2 = <span class="number">20</span></span><br><span class="line"><span class="keyword">var</span> fn:(<span class="keyword">inout</span> <span class="type">Int</span>,<span class="keyword">inout</span> <span class="type">Int</span>)-&gt;() = <span class="built_in">swap</span></span><br><span class="line">fn(&amp;i1, &amp;i2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"i1=\(i1),i2=\(i2)"</span>)<span class="comment">//i1=20,i2=10</span></span><br></pre></td></tr></table></figure>
+<p>泛型类型赋值给变量要制定好类型<code>fn:(inout Int,inout Int)-&gt;()</code><br>
+        
+          <a class="article-more-a" href="/2019/11/22/swift-泛型/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/22/swift-泛型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift-错误处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -692,87 +771,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/06/swift-继承/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-下标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/01/swift-下标/">swift 下标</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/01/swift-下标/" class="archive-article-date">
-  	<time datetime="2019-10-01T03:44:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-下标的定义"><a href="#一-下标的定义" class="headerlink" title="一 下标的定义"></a>一 下标的定义</h5><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x=<span class="number">0.0</span>, y=<span class="number">0.0</span></span><br><span class="line">    subscript(index:<span class="type">Int</span>) -&gt;Double &#123;</span><br><span class="line">        <span class="keyword">set</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> index % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">               x = <span class="keyword">new</span><span class="type">Value</span></span><br><span class="line"><span class="type"></span>            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               y = <span class="keyword">new</span><span class="type">Value</span></span><br><span class="line"><span class="type"></span>            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">           <span class="keyword">if</span> index % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">               <span class="keyword">return</span> x</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               <span class="keyword">return</span> y</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = Point()</span><br><span class="line">p[<span class="number">0</span>] = <span class="number">22.2</span></span><br><span class="line">p[<span class="number">1</span>] = <span class="number">33.3</span></span><br><span class="line">print(p.x,p[<span class="number">0</span>]) <span class="comment">//22.2 22.2</span></span><br><span class="line">print(p.y,p[<span class="number">1</span>]) <span class="comment">//33.3 33.3</span></span><br></pre></td></tr></table></figure>
-<p>使用subscript可以给任意类型,枚举,结构体,类增加下标功能,也可叫做下标脚本</p>
-<p>subscript 中定义的返回值类型决定了:</p>
-<ul>
-<li>get方法的返回值类型</li>
-<li>set方法中newValue的类型
-        
-          <a class="article-more-a" href="/2019/10/01/swift-下标/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/01/swift-下标/">展开全文 >></a>
         </p>
       
 

@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift-下标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/01/swift-下标/">swift 下标</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/01/swift-下标/" class="archive-article-date">
+  	<time datetime="2019-10-01T03:44:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-下标的定义"><a href="#一-下标的定义" class="headerlink" title="一 下标的定义"></a>一 下标的定义</h5><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x=<span class="number">0.0</span>, y=<span class="number">0.0</span></span><br><span class="line">    subscript(index:<span class="type">Int</span>) -&gt;Double &#123;</span><br><span class="line">        <span class="keyword">set</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> index % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">               x = <span class="keyword">new</span><span class="type">Value</span></span><br><span class="line"><span class="type"></span>            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               y = <span class="keyword">new</span><span class="type">Value</span></span><br><span class="line"><span class="type"></span>            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">           <span class="keyword">if</span> index % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">               <span class="keyword">return</span> x</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               <span class="keyword">return</span> y</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = Point()</span><br><span class="line">p[<span class="number">0</span>] = <span class="number">22.2</span></span><br><span class="line">p[<span class="number">1</span>] = <span class="number">33.3</span></span><br><span class="line">print(p.x,p[<span class="number">0</span>]) <span class="comment">//22.2 22.2</span></span><br><span class="line">print(p.y,p[<span class="number">1</span>]) <span class="comment">//33.3 33.3</span></span><br></pre></td></tr></table></figure>
+<p>使用subscript可以给任意类型,枚举,结构体,类增加下标功能,也可叫做下标脚本</p>
+<p>subscript 中定义的返回值类型决定了:</p>
+<ul>
+<li>get方法的返回值类型</li>
+<li>set方法中newValue的类型
+        
+          <a class="article-more-a" href="/2019/10/01/swift-下标/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/01/swift-下标/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift-方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -694,87 +775,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/15/swift函数/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift流程控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/10/swift流程控制/">swift流程控制</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/10/swift流程控制/" class="archive-article-date">
-  	<time datetime="2019-08-10T09:15:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-if-else"><a href="#一-if-else" class="headerlink" title="一 if else"></a>一 if else</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let age = 30</span><br><span class="line"><span class="keyword">if</span> age &gt;= 22 &#123;</span><br><span class="line">    <span class="builtin-name">print</span>(<span class="string">"Get married"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> age &gt;= 18 &#123;</span><br><span class="line">    <span class="builtin-name">print</span>(<span class="string">"Being a adult"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="builtin-name">print</span>(<span class="string">"listening tu ta zi jiao huan"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>if 后面的条件可以省略小括号<br>条件后面的大括号不可以省略<br><img src="../assets/blogImg/if01.jpg" alt><br>if 后面的条件只能是Bool类型</p>
-<h5 id="二-while"><a href="#二-while" class="headerlink" title="二 while"></a>二 while</h5><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">5</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">num</span> &gt; <span class="number">0</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"num is \(num)"</span>)</span><br><span class="line">    <span class="built_in">num</span> -= <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">-1</span></span><br><span class="line">repeat &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"num2 is \(num2)"</span>)</span><br><span class="line">&#125; <span class="keyword">while</span> num2 &gt; <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>repeat-while相当于C语言中的do-while<br>从Swift3开始,去除了自增(++),自减(–)运算符,为啥去除呢,可能为了更严谨吧.</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> number = <span class="number">0</span></span><br><span class="line">let <span class="selector-tag">b</span> = ++ number + number++</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(b)</span></span> <span class="comment">//?? 你能快速算出b是几么?</span></span><br></pre></td></tr></table></figure>
-<p>swift去除自增自减,也是为了更明确简洁吧.</p>
-        
-          <a class="article-more-a" href="/2019/08/10/swift流程控制/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/10/swift流程控制/">展开全文 >></a>
         </p>
       
 

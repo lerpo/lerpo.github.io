@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://example.com/2019/11/15/swift-%E5%85%83%E7%B1%BB%E5%9E%8B/</loc>
-    <lastmod>2020-12-15</lastmod>
+    <lastmod>2020-12-16</lastmod>
   </url>
   <url>
     <loc>http://example.com/2019/11/20/swift-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2020-12-15</lastmod>
+    <lastmod>2020-12-16</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2019/11/22/swift-%E6%B3%9B%E5%9E%8B/</loc>
+    <lastmod>2020-12-16</lastmod>
   </url>
   <url>
     <loc>http://example.com/2019/11/12/swift-%E5%8D%8F%E8%AE%AE/</loc>

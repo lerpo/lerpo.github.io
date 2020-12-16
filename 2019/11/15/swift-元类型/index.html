@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="当前明月的博客">
 <meta property="og:description" content="一 初识元类型swift提供了两种特殊的类型:Any, AnyObject  Any: 可以代表任意类型  123456  class Student&amp;#123;    &amp;#125;var stu:Any = 10stu = &quot;Jack&quot;stu = Student() stu是Any类型,赋值给它啥都行  AnyObject:可以代表任意类类型  123456789protocol Runnabl">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-12-15T14:44:03.417Z">
+<meta property="og:updated_time" content="2020-12-16T15:12:30.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift 元类型">
 <meta name="twitter:description" content="一 初识元类型swift提供了两种特殊的类型:Any, AnyObject  Any: 可以代表任意类型  123456  class Student&amp;#123;    &amp;#125;var stu:Any = 10stu = &quot;Jack&quot;stu = Student() stu是Any类型,赋值给它啥都行  AnyObject:可以代表任意类类型  123456789protocol Runnabl">
@@ -189,14 +189,17 @@
 <li>X.self是一个元类型(metadata)的指针,    metadata存放着类型相关信息</li>
 <li>X.self属于X.Type类型</li>
 </ol>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> s = Student()</span><br><span class="line"><span class="keyword">var</span> pType:Student.<span class="built_in">Type</span> = Student.self <span class="comment">//X.self属于X.Type类型</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">![](../assets/blogImg/yuanleixing01.png)</span><br><span class="line">pType 指向的就是s地址内容的前<span class="number">8</span>个字节</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> s = Student()</span><br><span class="line"><span class="keyword">var</span> pType:Student.<span class="built_in">Type</span> = Student.self <span class="comment">//X.self属于X.Type类型</span></span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">![](../assets/blogImg/yuanleixing01.png)</span><br><span class="line">pType 指向的就是s地址内容的前<span class="number">8</span>个字节</span><br></pre></td></tr></table></figure>
 <p>class Person {</p>
-<p>}<br>class Student :Person {}<br>var anyType: AnyObject.Type = Person.self<br>anyType = Student.self<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">父类类型可以指向子类类型</span><br></pre></td></tr></table></figure></p>
+<p>}<br>class Student :Person {}<br>var anyType: AnyObject.Type = Person.self<br>anyType = Student.self</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">父类类型可以指向子类类型</span><br></pre></td></tr></table></figure>
 <p>class Person {</p>
 <p>}<br>class Student :Person {}</p>
-<p>public typealias AnyClass = AnyObject.Type<br>var anyType:AnyClass = Person.self<br>anyType = Student.self<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### <span class="number">3</span> AnyClass 就是AnyObject.Type的别名,代表任意类类型的类型</span><br><span class="line"></span><br><span class="line">-----</span><br></pre></td></tr></table></figure></p>
+<p>public typealias AnyClass = AnyObject.Type<br>var anyType:AnyClass = Person.self<br>anyType = Student.self</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### <span class="number">3</span> AnyClass 就是AnyObject.Type的别名,代表任意类类型的类型</span><br></pre></td></tr></table></figure>
 <p>class Person {</p>
-<p>}<br>class Student :Person {}<br>var per = Person()<br>var perType = type(of: per) //Person.self<br>print(Person.self == type(of: per))//true<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attribute">type(of</span>: per) 就是取出per对象的前8个字节,及类型信息</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 四 元类型的应用</span><br></pre></td></tr></table></figure></p>
+<p>}<br>class Student :Person {}<br>var per = Person()<br>var perType = type(of: per) //Person.self<br>print(Person.self == type(of: per))//true</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attribute">type(of</span>: per) 就是取出per对象的前8个字节,及类型信息</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 四 元类型的应用</span><br></pre></td></tr></table></figure>
 <p>class TabBarViewController: UITabBarController {</p>
 <pre><code>override func viewDidLoad() {
     super.viewDidLoad()
@@ -224,7 +227,8 @@ func addChildConroller(_ title:String,
 </code></pre><p>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">动态添加app底部菜单栏</span><br><span class="line"></span><br><span class="line">##### 五 大写的Self</span><br><span class="line">Self代表当前类型,一般用作返回值类型,限定返回值跟方法调用者必须是同一类型,类似于OC的instanceType</span><br></pre></td></tr></table></figure></p>
 <p>protocol Runnable {<br>    func test() -&gt; Self<br>}</p>
 <p>class Person: Runnable {<br>    required init() {} //使用元类型初始化,必须是required<br>    func test() -&gt; Self {<br>        type(of: self).init()<br>    }<br>}<br>class Student: Person {</p>
-<p>}<br>var p = Person()<br>print(p.test()) //Person<br>var stu = Student()<br>print(stu.test()) //Student<br><code>`</code></p>
+<p>}<br>var p = Person()<br>print(p.test()) //Person<br>var stu = Student()<br>print(stu.test()) //Student</p>
+<p><code>`</code></p>
 <p>类初始化器需要required 结构体不需要,类有继承,结构体没有继承.要保证子类一定要实现它的初始化方法因为test方法里面使用的是 type(of: self).init(),那么怎么保证每个类都有init()方法呢,那就在父类中加reqiured,这样子类中都必须要定义init()方法, 那么就可以统一的调用 type(of: self).init()了,如果不定义required,那么子类有可能就不会实现init()方法,那么调用test方法就会报错</p>
 
       
