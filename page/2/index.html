@@ -152,6 +152,164 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift-多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/15/swift-多态/">swift 多态</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/15/swift-多态/" class="archive-article-date">
+  	<time datetime="2019-10-15T02:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-多态概念"><a href="#一-多态概念" class="headerlink" title="一 多态概念"></a>一 多态概念</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">speak</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Animal speak"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Animal eat"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sleep</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Animal sleep"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:<span class="title">Animal</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">speak</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Dog speak"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Dog eat"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Dog run"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> anim = <span class="type">Animal</span>()</span><br><span class="line">anim.speak()</span><br><span class="line">anim.eat()</span><br><span class="line">anim.sleep()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"----------"</span>)</span><br><span class="line">anim = <span class="type">Dog</span>()</span><br><span class="line">anim.speak()</span><br><span class="line">anim.eat()</span><br><span class="line">anim.sleep()</span><br><span class="line"><span class="comment">//Animal speak</span></span><br><span class="line"><span class="comment">//Animal eat</span></span><br><span class="line"><span class="comment">//Animal sleep</span></span><br><span class="line"><span class="comment">//----------</span></span><br><span class="line"><span class="comment">//Dog speak</span></span><br><span class="line"><span class="comment">//Dog eat</span></span><br><span class="line"><span class="comment">//Animal sleep</span></span><br></pre></td></tr></table></figure>
+<p><strong>多态</strong>: 父类型的引用指向子类型的对象<br>
+        
+          <a class="article-more-a" href="/2019/10/15/swift-多态/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/15/swift-多态/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-swift-继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/06/swift-继承/">swift 继承</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/06/swift-继承/" class="archive-article-date">
+  	<time datetime="2019-10-06T06:56:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-继承初探"><a href="#一-继承初探" class="headerlink" title="一 继承初探"></a>一 继承初探</h5><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> age = <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:<span class="type">Animal &#123;</span></span></span><br><span class="line">    <span class="keyword">var</span> weight = <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义类在类名后加:父类 就形成了继承关系.</p>
+<ol>
+<li>值类型不支持继承,只有类支持继承(枚举,结构体都不支持继承)</li>
+<li>没有父类的类称基类,swift不像OC那样任何类最终都要继承自某个基类</li>
+</ol>
+        
+          <a class="article-more-a" href="/2019/10/06/swift-继承/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/06/swift-继承/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift-下标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -614,167 +772,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/28/swift枚举/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-可选项-Optional" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/21/swift-可选项-Optional/">swift 可选项(Optional)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/21/swift-可选项-Optional/" class="archive-article-date">
-  	<time datetime="2019-08-21T11:32:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-可选项定义"><a href="#一-可选项定义" class="headerlink" title="一 可选项定义"></a>一 可选项定义</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name:<span class="type">String?</span> = <span class="string">"Jack"</span></span><br><span class="line">name = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> age:<span class="type">Int?</span></span><br><span class="line">age = <span class="number">10</span></span><br><span class="line">age = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">15</span>,<span class="number">40</span>,<span class="number">29</span>]</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">get</span><span class="params">(<span class="number">_</span> index:Int)</span></span> -&gt; <span class="type">Int?</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> index &lt; <span class="number">0</span> || index &gt;= array.<span class="built_in">count</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array[index]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">get</span>(<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">get</span>(-<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">get</span>(<span class="number">4</span>))<span class="comment">//Optional(15)</span></span><br><span class="line"><span class="comment">//nil</span></span><br><span class="line"><span class="comment">//nil</span></span><br></pre></td></tr></table></figure>
-<p>可选项,一般也叫可选类型,它允许将值设置为nil,在类型名称后面加个问号❓来定义一个可选项, 通过打印我们看到可选项打印出来是Optional(15),那么这个Optional(15)我们该怎么用呢</p>
-<h5 id="二-强制解包"><a href="#二-强制解包" class="headerlink" title="二 强制解包"></a>二 强制解包</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var age:Int? = <span class="number">10</span></span><br><span class="line">var ageInt:Int = age!</span><br><span class="line">ageInt += <span class="number">10</span></span><br><span class="line">print(ageInt)<span class="regexp">//</span><span class="number">20</span></span><br><span class="line"><span class="regexp">//</span>Program ended with <span class="keyword">exit</span> code: <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>如果要从可选项中取出被包装的数据,需要使用感叹号❕</p>
-<p><img src="../assets/blogImg/kexuanxiang01.png" alt><br>对值为nil的可选项进行强制解包,将会产生运行时错误</p>
-<h5 id="判断可选项是否包含值"><a href="#判断可选项是否包含值" class="headerlink" title="判断可选项是否包含值"></a>判断可选项是否包含值</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number = <span class="type">Int</span>(<span class="string">"123"</span>)</span><br><span class="line"><span class="keyword">if</span> number != <span class="literal">nil</span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"字符串转换整数成功:\(number)"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"字符串转换整数失败"</span>)</span><br><span class="line">&#125;<span class="comment">//字符串转换整数成功:Optional(123)</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/08/21/swift-可选项-Optional/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/21/swift-可选项-Optional/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/15/swift函数/">swift函数</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/15/swift函数/" class="archive-article-date">
-  	<time datetime="2019-08-15T10:59:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-函数的定义"><a href="#一-函数的定义" class="headerlink" title="一 函数的定义"></a>一 函数的定义</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//无参有返回值</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pi</span><span class="params">()</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">3.1415926</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//有参有返回值</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sum</span><span class="params">(v1:Int, v2:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> v1 + v2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//无参无返回值</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayHello</span><span class="params">()</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//有参无返回值</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sayWorld</span><span class="params">(v1:Int)</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(v1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>形参默认是let,也只能是let</p>
-<h5 id="二-函数的文档注释"><a href="#二-函数的文档注释" class="headerlink" title="二 函数的文档注释"></a>二 函数的文档注释</h5><figure class="highlight plain"><figcaption><span>返回多个值</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">///</span><br><span class="line">/// 返回两个数的和 差 平均值</span><br><span class="line">///</span><br><span class="line">/// - Parameter v1: 第一个整数</span><br><span class="line">/// - Parameter v2: 第二个整数</span><br><span class="line">/// - Returns: sum:Int, difference:Int, average:Int</span><br><span class="line">///</span><br><span class="line">/// - Note:通过一个元组实现多返回值</span><br><span class="line">func calculate(v1:Int, v2:Int) -&gt; (sum:Int, difference:Int, average:Int) &#123;</span><br><span class="line">    let sum = v1 + v2</span><br><span class="line">    return (sum,v1-v2, sum &gt;&gt; 1)</span><br><span class="line">&#125;</span><br><span class="line">let result = calculate(v1: 20, v2: 10)</span><br></pre></td></tr></table></figure>
-<p>对着函数调用按住option键即可查看注释效果</p>
-<p><img src="../assets/blogImg/hanshu01.jpg" alt><br><a href="https://swift.org/documentation/api-design-guidelines/" target="_blank" rel="noopener">更多注释规范 点此查看</a></p>
-        
-          <a class="article-more-a" href="/2019/08/15/swift函数/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/15/swift函数/">展开全文 >></a>
         </p>
       
 

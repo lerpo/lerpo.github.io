@@ -152,6 +152,162 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift-扩展" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/30/swift-扩展/">swift 扩展</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/30/swift-扩展/" class="archive-article-date">
+  	<time datetime="2019-11-30T05:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-扩展初识"><a href="#一-扩展初识" class="headerlink" title="一 扩展初识"></a>一 扩展初识</h5><figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">extension <span class="keyword">Double</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> km: <span class="keyword">Double</span> &#123;<span class="keyword">self</span> * <span class="number">1</span>_000<span class="number">.0</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> m: <span class="keyword">Double</span> &#123;<span class="keyword">self</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> dm: <span class="keyword">Double</span> &#123; <span class="keyword">self</span> / <span class="number">10.0</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> cm: <span class="keyword">Double</span> &#123;<span class="keyword">self</span> / <span class="number">100.0</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> mm: <span class="keyword">Double</span> &#123;<span class="keyword">self</span> / <span class="number">1</span>_000<span class="number">.0</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> am:<span class="keyword">Double</span> = <span class="number">1000</span></span><br><span class="line"><span class="keyword">print</span>(am.km)</span><br><span class="line"><span class="keyword">print</span>(am.m)</span><br><span class="line"><span class="keyword">print</span>(am.dm)</span><br><span class="line"><span class="keyword">print</span>(am.cm)</span><br><span class="line"><span class="keyword">print</span>(am.mm)</span><br><span class="line"><span class="comment">//1000000.0</span></span><br><span class="line"><span class="comment">//1000.0</span></span><br><span class="line"><span class="comment">//100.0</span></span><br><span class="line"><span class="comment">//10.0</span></span><br><span class="line"><span class="comment">//1.0</span></span><br></pre></td></tr></table></figure>
+<p>swift中的扩展类似于OC的分类,可以为枚举,结构体,类,协议添加方法,计算属性,下标 ,便捷初始化器,嵌套类型,协议等,扩展还有一些注意⚠️事项<br>
+        
+          <a class="article-more-a" href="/2019/11/30/swift-扩展/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/30/swift-扩展/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-swift-运算符重载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/25/swift-运算符重载/">swift 运算符重载</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/25/swift-运算符重载/" class="archive-article-date">
+  	<time datetime="2019-11-25T13:15:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-溢出运算符-Overflow-Operator"><a href="#一-溢出运算符-Overflow-Operator" class="headerlink" title="一 溢出运算符(Overflow Operator)"></a>一 溢出运算符(Overflow Operator)</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="type">Int8</span>.<span class="built_in">min</span>) <span class="comment">//-128</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">Int8</span>.<span class="built_in">max</span>) <span class="comment">//127</span></span><br><span class="line"><span class="keyword">var</span> a:<span class="type">Int8</span> = <span class="number">10</span></span><br><span class="line"><span class="keyword">var</span> b:<span class="type">Int8</span> = a * <span class="number">100</span><span class="comment">//❌ 超出范围</span></span><br></pre></td></tr></table></figure>
+<p>swift的算数运算符出现溢出时会抛出运行时错误</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> min = UInt8.min</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(min)</span></span>  <span class="comment">//0</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(min &amp;- <span class="number">1</span>)</span></span> <span class="comment">//255</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">var</span> max = UInt8.max</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(max &amp;+ <span class="number">1</span>)</span></span> <span class="comment">//0</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(max &amp;* <span class="number">2</span>)</span></span> <span class="comment">//254</span></span><br></pre></td></tr></table></figure>
+<p>swift有溢出运算符 <strong>&amp;+ , &amp;-, &amp;*</strong> ,用来支持溢出运算,溢出运算超出类型返回,会自动循环♻️从零开始<br>
+        
+          <a class="article-more-a" href="/2019/11/25/swift-运算符重载/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/25/swift-运算符重载/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift-泛型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -613,164 +769,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/20/swift-初始化器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/15/swift-多态/">swift 多态</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/15/swift-多态/" class="archive-article-date">
-  	<time datetime="2019-10-15T02:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-多态概念"><a href="#一-多态概念" class="headerlink" title="一 多态概念"></a>一 多态概念</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">speak</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Animal speak"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Animal eat"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sleep</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Animal sleep"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:<span class="title">Animal</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">speak</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Dog speak"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Dog eat"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Dog run"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> anim = <span class="type">Animal</span>()</span><br><span class="line">anim.speak()</span><br><span class="line">anim.eat()</span><br><span class="line">anim.sleep()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"----------"</span>)</span><br><span class="line">anim = <span class="type">Dog</span>()</span><br><span class="line">anim.speak()</span><br><span class="line">anim.eat()</span><br><span class="line">anim.sleep()</span><br><span class="line"><span class="comment">//Animal speak</span></span><br><span class="line"><span class="comment">//Animal eat</span></span><br><span class="line"><span class="comment">//Animal sleep</span></span><br><span class="line"><span class="comment">//----------</span></span><br><span class="line"><span class="comment">//Dog speak</span></span><br><span class="line"><span class="comment">//Dog eat</span></span><br><span class="line"><span class="comment">//Animal sleep</span></span><br></pre></td></tr></table></figure>
-<p><strong>多态</strong>: 父类型的引用指向子类型的对象<br>
-        
-          <a class="article-more-a" href="/2019/10/15/swift-多态/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/15/swift-多态/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/06/swift-继承/">swift 继承</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/06/swift-继承/" class="archive-article-date">
-  	<time datetime="2019-10-06T06:56:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-继承初探"><a href="#一-继承初探" class="headerlink" title="一 继承初探"></a>一 继承初探</h5><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> age = <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:<span class="type">Animal &#123;</span></span></span><br><span class="line">    <span class="keyword">var</span> weight = <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义类在类名后加:父类 就形成了继承关系.</p>
-<ol>
-<li>值类型不支持继承,只有类支持继承(枚举,结构体都不支持继承)</li>
-<li>没有父类的类称基类,swift不像OC那样任何类最终都要继承自某个基类</li>
-</ol>
-        
-          <a class="article-more-a" href="/2019/10/06/swift-继承/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/06/swift-继承/">展开全文 >></a>
         </p>
       
 

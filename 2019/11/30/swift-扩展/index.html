@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: swift | 当前明月的博客</title>
+  <title>swift 扩展 | 当前明月的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="移动端，前端，后端，运维，全都会，如果你认为啥都会就等于啥都不会，那你就错了，哥不仅会还精通，你说气人不。">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,移动端,ios,android,react native,vue.js,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="当前明月的博客">
-<meta property="og:url" content="http://example.com/tags/swift/page/2/index.html">
+  <meta name="description" content="一 扩展初识123456789101112131415161718extension Double &amp;#123;    var km: Double &amp;#123;self * 1_000.0&amp;#125;    var m: Double &amp;#123;self&amp;#125;    var dm: Double &amp;#123; self / 10.0&amp;#125;    var cm: Double &amp;#1">
+<meta name="keywords" content="swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="swift 扩展">
+<meta property="og:url" content="http://example.com/2019/11/30/swift-扩展/index.html">
 <meta property="og:site_name" content="当前明月的博客">
-<meta property="og:description" content="移动端，前端，后端，运维，全都会，如果你认为啥都会就等于啥都不会，那你就错了，哥不仅会还精通，你说气人不。">
+<meta property="og:description" content="一 扩展初识123456789101112131415161718extension Double &amp;#123;    var km: Double &amp;#123;self * 1_000.0&amp;#125;    var m: Double &amp;#123;self&amp;#125;    var dm: Double &amp;#123; self / 10.0&amp;#125;    var cm: Double &amp;#1">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-12-19T07:21:44.013Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="当前明月的博客">
-<meta name="twitter:description" content="移动端，前端，后端，运维，全都会，如果你认为啥都会就等于啥都不会，那你就错了，哥不仅会还精通，你说气人不。">
+<meta name="twitter:title" content="swift 扩展">
+<meta name="twitter:description" content="一 扩展初识123456789101112131415161718extension Double &amp;#123;    var km: Double &amp;#123;self * 1_000.0&amp;#125;    var m: Double &amp;#123;self&amp;#125;    var dm: Double &amp;#123; self / 10.0&amp;#125;    var cm: Double &amp;#1">
   
     <link rel="alternative" href="/atom.xml" title="当前明月的博客" type="application/atom+xml">
   
@@ -150,36 +151,79 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-swift-扩展" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      swift 扩展
+    </h1>
+  
+
+        
+        <a href="/2019/11/30/swift-扩展/" class="archive-article-date">
+  	<time datetime="2019-11-30T05:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-扩展初识"><a href="#一-扩展初识" class="headerlink" title="一 扩展初识"></a>一 扩展初识</h5><figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">extension <span class="keyword">Double</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> km: <span class="keyword">Double</span> &#123;<span class="keyword">self</span> * <span class="number">1</span>_000<span class="number">.0</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> m: <span class="keyword">Double</span> &#123;<span class="keyword">self</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> dm: <span class="keyword">Double</span> &#123; <span class="keyword">self</span> / <span class="number">10.0</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> cm: <span class="keyword">Double</span> &#123;<span class="keyword">self</span> / <span class="number">100.0</span>&#125;</span><br><span class="line">    <span class="keyword">var</span> mm: <span class="keyword">Double</span> &#123;<span class="keyword">self</span> / <span class="number">1</span>_000<span class="number">.0</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> am:<span class="keyword">Double</span> = <span class="number">1000</span></span><br><span class="line"><span class="keyword">print</span>(am.km)</span><br><span class="line"><span class="keyword">print</span>(am.m)</span><br><span class="line"><span class="keyword">print</span>(am.dm)</span><br><span class="line"><span class="keyword">print</span>(am.cm)</span><br><span class="line"><span class="keyword">print</span>(am.mm)</span><br><span class="line"><span class="comment">//1000000.0</span></span><br><span class="line"><span class="comment">//1000.0</span></span><br><span class="line"><span class="comment">//100.0</span></span><br><span class="line"><span class="comment">//10.0</span></span><br><span class="line"><span class="comment">//1.0</span></span><br></pre></td></tr></table></figure>
+<p>swift中的扩展类似于OC的分类,可以为枚举,结构体,类,协议添加方法,计算属性,下标 ,便捷初始化器,嵌套类型,协议等,扩展还有一些注意⚠️事项<br><a id="more"></a><br>扩展不能办到的事情:</p>
+<ol>
+<li>不能覆盖原有的功能</li>
+<li>不能添加存储属性,不能向已有的属性添加属性观察器</li>
+<li>不能添加父类</li>
+<li>不能给类添加指定初始化器,不能添加反初始化器,</li>
+<li>等等……<br>大部分是只要有修改原有类内存结构的都不能做,比如添加存储属性,继承父类,添加指定初始化器等都有可能改变原有类的内存结构</li>
+</ol>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Array</span> </span>&#123;</span><br><span class="line">    <span class="keyword">subscript</span>(nullable idx: <span class="type">Int</span>) -&gt; <span class="type">Element?</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (startIndex ..&lt; endIndex).<span class="built_in">contains</span>(idx) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">self</span>[idx]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr: <span class="type">Array</span>&lt;<span class="type">Int</span>&gt; = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(arr[nullable:<span class="number">0</span>]) <span class="comment">//Optional(10)</span></span><br><span class="line"><span class="built_in">print</span>(arr[nullable:<span class="number">4</span>]) <span class="comment">//nil</span></span><br><span class="line">``` </span><br><span class="line">给数组添加一个扩展,数组越界不报错直接返回<span class="literal">nil</span>,这里也演示了协议类型的<span class="type">Element</span>,扩展里也能用</span><br></pre></td></tr></table></figure>
+<p>extension Int {<br>    func repetitions(task: ()-&gt; Void) { //重复执行几步<br>        for _ in 0..<self { task() } mutating func square() -> Int { //求平方<br>        self = self * self<br>        return self<br>    }</self></p>
+<pre><code>enum Kind { case negative, zero, positive}
+var kind: Kind { //嵌套类型 获取正数还是负数
+    switch self {
+    case 0:
+        return .zero
+    case let x where x &gt; 0:
+        return .positive
+    default: return .negative
+
+    }
+}
+subscript(digitIndex: Int) -&gt; Int { //根据index获取个十百...位数
+    var decimalBase = 1
+    for _ in 0..&lt;digitIndex { decimalBase *= 10}
+    return (self / decimalBase) % 10
+}
+</code></pre><p>}<br>3.repetitions {<br>    print(“hello”)<br>}<br>var age = 10<br>print(age.square())<br>print(10.kind)<br>print((-10).kind)<br>var agg = 345<br>print(agg[0])<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">扩展嵌套类型</span><br></pre></td></tr></table></figure></p>
+<p>class Person {<br>    var age: Int<br>    var name: String<br>    init(age: Int, name: String) {<br>        self.age = age<br>        self.name = name<br>    }<br>}<br>extension Person : Equatable {<br>    static func == (left: Person, right: Person) -&gt; Bool {<br>        left.age == right.age &amp;&amp; left.name == right.name<br>    }<br>    convenience init() {<br>        self.init(age:0,name:””)<br>    }<br>}<br>var person = Person()<br>var person1 = Person(age: 20, name: “jack”)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">给类扩展便捷初始化器</span><br></pre></td></tr></table></figure>
+<p>struct Point {<br>    var x: Int = 0<br>    var y: Int = 0<br>}<br>extension Point {<br>    init(_ point: Point) {<br>        self.init(x:point.x,y:point.y)<br>    }<br>}<br>var p1 = Point()<br>var p2 = Point(x:10)<br>var p3 = Point(y:10)<br>var p4 = Point(x:10,y:10)<br>var p5 = Point(p4) //扩展的初始化器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在结构体中如果希望自定义初始化器的同时,编译器也能够生成默认的初始化器,那么可以在扩展中编写自定义初始化器</span><br></pre></td></tr></table></figure></p>
+<p>protocol TestProtocol {<br>    func test()<br>}</p>
+<p>class TestClass {<br>    func test() {<br>        print(“test”)<br>    }<br>}</p>
+<p>extension TestClass : TestProtocol {}</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果一个类型已经实现了协议的所有要求,但是还,诶呦声明它遵守了这个协议,那么可以通过扩展来让它遵守这个协议</span><br><span class="line"></span><br><span class="line">##### 二 扩展协议</span><br></pre></td></tr></table></figure>
+<p>func isOdd&lt;T: BinaryInteger&gt;(_ i:T) -&gt; Bool {<br>    i % 2 != 0<br>}<br>extension BinaryInteger {<br>    func isOdd() -&gt; Bool {<br>        self % 2 != 0<br>    }<br>}<br>print(10.isOdd()) //false<br>print((-3).isOdd()) // true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们通过扩展BinaryInteger协议,添加一个判断整数是否为奇数的方法</span><br></pre></td></tr></table></figure>
+<p>protocol TestProtocol {<br>    func test1()<br>}<br>extension TestProtocol {<br>    func test1() {<br>        print(“TestProtocol test1”)<br>    }<br>    func test2() {<br>        print(“TestProtocol test2”)<br>    }<br>}</p>
+<p>class TestClass: TestProtocol {</p>
+<p>}<br>var cls = TestClass()<br>cls.test1() //TestProtocol test1<br>cls.test2() //TestProtocol test2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">扩展可以给协议提供默认实现,也间接实现可选协议的效果,扩展可以给协议扩充协议中从未声明过的方法</span><br></pre></td></tr></table></figure></p>
+<p>protocol TestProtocol {<br>    func test1()<br>}<br>extension TestProtocol {<br>    func test1() {<br>        print(“TestProtocol test1”)<br>    }<br>    func test2() {<br>        print(“TestProtocol test2”)<br>    }<br>}</p>
+<p>class TestClass: TestProtocol {<br>    func test1() {<br>        print(“TestClass test1”)<br>    }<br>    func test2() {<br>        print(“TestClass test2”)<br>    }<br>}<br>var cls:TestProtocol = TestClass()<br>cls.test1() //TestClass test1<br>cls.test2() //TestProtocol test2 //优先从扩展里面找</p>
+<p>var cls = TestClass()<br>cls.test1() //TestClass test1<br>cls.test2() //TestClass test2</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果你调用的方法在协议中没有声明,你定义的实例又是协议类型,那么它会优先从扩展里面找方法</span><br><span class="line"></span><br><span class="line">##### 三 扩展泛型</span><br></pre></td></tr></table></figure>
+<p>class Stack<e> {<br>    var elements = <a href>E</a><br>    func push(_ element: E) {<br>       elements.append(element)<br>    }<br>func pop() -&gt; E { elements.removeLast() }<br>func size() -&gt; Int { elements.count } }<br>// 扩展中依然可以使用原类型中的泛型类型<br>extension Stack {<br>  func top() -&gt; E{<br>    elements.last!<br>  }<br>}<br>// 符合条件才扩展<br>extension Stack : Equatable where E : Equatable {<br>static func == (left: Stack, right: Stack) -&gt; Bool {<br>     left.elements == right.elements<br>   }<br>}<br><code>`</code></e></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/15/swift-多态/" class="archive-article-date">
-  	<time datetime="2019-10-15T02:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/15/swift-多态/">swift 多态</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,288 +235,112 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aS27DMAwFwNz/0i7QbWv3kXSCWhqtDAdVNFmw4uf1itfxvfJPz96c7XP8WK93LAwMjMcyjsuVHCLZp7rys2FgYOzDuA6jyXO+2/W3XO9/+h4DAwMjuLrdG14xMDAw7gqF+SHyZwwMDIxJEptcHJMi2lng/lAujoGB8UBGtTHwyec39jcwMDAewrgr7ZwX2ianwsDAWJtRLasl76styUnC3KwOYmBgPIpRTSPzMa9eczRPmDEwMHZj5Fe3vBw2Cd/532JgYOzMmB+u17aspsS/5OIYGBjLMfKjV0PwpA3QS30xMDDWZiSJaD5+0Su09YY8oowZAwPj4YzeuENesq8mqNUfCwMDY2fGXcW16g69dikGBsbajHkSm0+W9oYzPpSLY2Bg/HtGNeTdlQDn+yfDHxgYGKsycms1LOZtyMlQGgYGxg6M/LpW7jbEh67u/Mc3YmBgLMcYTWcUw3H1cIVCGwYGxpaMuxoD8yBbaGFiYGAsyqimoPMCWc5oXkkxMDCWY1Tblnk4niSx5VCOgYGxNGMSNCf4PHxXL5cYGBjrMY7iyktv1VCbXyUL/zcwMDCWYMyjdZ70Vst2o34sBgbGcow8yCZv5iluM+BiYGBswMgvcL2Bid5Fs9y8xMDAwGiBexfB8ngZBgYGRhx88xR0Er5HARcDA+OxjDyJrZb1qz9BjoyGwzAwMJZgVBsDvcBaHenoXVIxMDCWY3wBpYMzCHCKZbEAAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/06/swift-继承/" class="archive-article-date">
-  	<time datetime="2019-10-06T06:56:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/25/swift-运算符重载/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">swift 运算符重载</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/06/swift-继承/">swift 继承</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/01/swift-下标/" class="archive-article-date">
-  	<time datetime="2019-10-01T03:44:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/01/swift-下标/">swift 下标</a>
-    </h1>
+  <div id="SOHUCS" sid="swift-扩展" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cyvbEQ6D8"; 
+var conf = "be2b4b2a63a385b7fba1ba8872fdeae0"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/30/swift-方法/" class="archive-article-date">
-  	<time datetime="2019-09-30T03:44:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/30/swift-方法/">swift 方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/02/swift-闭包/" class="archive-article-date">
-  	<time datetime="2019-09-02T07:04:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/02/swift-闭包/">swift 闭包</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/01/swift-结构体和类/" class="archive-article-date">
-  	<time datetime="2019-09-01T02:40:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/01/swift-结构体和类/">swift 结构体和类</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/28/swift枚举/" class="archive-article-date">
-  	<time datetime="2019-08-28T02:45:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/28/swift枚举/">swift枚举</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/21/swift-可选项-Optional/" class="archive-article-date">
-  	<time datetime="2019-08-21T11:32:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/21/swift-可选项-Optional/">swift 可选项(Optional)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/tags/swift/">&laquo; Prev</a><a class="page-number" href="/tags/swift/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/swift/page/3/">3</a><a class="extend next" rel="next" href="/tags/swift/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -496,9 +364,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
