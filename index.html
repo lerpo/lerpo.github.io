@@ -152,6 +152,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift-访问控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/30/swift-访问控制/">swift 访问控制</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/30/swift-访问控制/" class="archive-article-date">
+  	<time datetime="2019-11-30T12:38:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-访问控制五个级别"><a href="#一-访问控制五个级别" class="headerlink" title="一 访问控制五个级别"></a>一 访问控制五个级别</h5><p>在访问控制这块,Swift提供了5个不同的访问级别 如下:</p>
+<ol>
+<li><strong>open</strong>: 允许在定义实体的模块,其它模块中访问,允许其他模块进行继承,重写(open 只能用在类及类成员上)</li>
+<li><strong>public</strong>: 允许在定义实体的模块,其它模块中访问, 不允许其他模块进行继承重写</li>
+<li><strong>internal</strong>: 只允许在定义实体的模块中访问,不允许在其他模块中访问</li>
+<li><strong>fileprivate</strong>: 只允许在定义实体的源文件中访问</li>
+<li><strong>private</strong>: 只允许在定义实体的封闭声明中访问</li>
+</ol>
+<p>绝大部分实体默认都是internal级别<br>
+        
+          <a class="article-more-a" href="/2019/11/30/swift-访问控制/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/30/swift-访问控制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift-扩展" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -690,85 +774,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/25/swift-可选链/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-初始化器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/20/swift-初始化器/">swift 初始化器</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/20/swift-初始化器/" class="archive-article-date">
-  	<time datetime="2019-10-20T08:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-初始化器种类-只针对一类"><a href="#一-初始化器种类-只针对一类" class="headerlink" title="一 初始化器种类(只针对一类)"></a>一 初始化器种类(只针对一类)</h5><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">struct Ract &#123;</span><br><span class="line">    <span class="built_in">var</span> <span class="built_in">width</span>:Int = <span class="number">0</span></span><br><span class="line">    <span class="built_in">var</span> <span class="built_in">height</span>:Int = <span class="number">0</span></span><br><span class="line">    init(<span class="built_in">width</span>:Int) &#123;</span><br><span class="line">        self.<span class="built_in">width</span> = <span class="built_in">width</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Size &#123;</span><br><span class="line">    <span class="built_in">var</span> <span class="built_in">width</span>:Int = <span class="number">0</span></span><br><span class="line">    <span class="built_in">var</span> <span class="built_in">height</span>:Int = <span class="number">0</span></span><br><span class="line">    init(<span class="built_in">width</span>:Int) &#123;</span><br><span class="line">        self.<span class="built_in">width</span> = <span class="built_in">width</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">var</span> s = Size(<span class="built_in">width</span>: <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-<p>类,结构体,枚举都可以定义初始化器</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Size</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> width:<span class="built_in">Int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> height:<span class="built_in">Int</span> = <span class="number">0</span></span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> s = Size()</span><br></pre></td></tr></table></figure>
-<p>如果我们没有指定初始化器,编译器会默认给我们生成一个初始化器,如果我们指定了初始化器,编译器不会再给我们生成默认的,指定初始化器,要保证类的成员变量都能够初始化<br>
-        
-          <a class="article-more-a" href="/2019/10/20/swift-初始化器/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/20/swift-初始化器/">展开全文 >></a>
         </p>
       
 

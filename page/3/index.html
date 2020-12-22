@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift枚举" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/28/swift枚举/">swift枚举</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/28/swift枚举/" class="archive-article-date">
+  	<time datetime="2019-08-28T02:45:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-枚举的基本用法"><a href="#一-枚举的基本用法" class="headerlink" title="一 枚举的基本用法"></a>一 枚举的基本用法</h5><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Direction</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> north</span><br><span class="line">    <span class="keyword">case</span> south</span><br><span class="line">    <span class="keyword">case</span> east</span><br><span class="line">    <span class="keyword">case</span> west</span><br><span class="line">&#125;</span><br><span class="line">var dir = Direction.west</span><br><span class="line">dir = .north</span><br><span class="line">print(dir)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Season</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> spring, summer,autumn, winter</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var season = Season.summer</span><br><span class="line">switch season &#123;</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">spring:</span></span><br><span class="line">    print(<span class="string">"spring"</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">summer:</span></span><br><span class="line">    print(<span class="string">"summer"</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">autumn:</span></span><br><span class="line">    print(<span class="string">"autumn"</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="symbol">winter:</span></span><br><span class="line">    print(<span class="string">"winter"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于有限固定值的定义成枚举比较合适,比如,季节,请求状态,物流流转状态,订单状态,等等</p>
+<h5 id="二-关联值"><a href="#二-关联值" class="headerlink" title="二 关联值"></a>二 关联值</h5><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Score</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> points(Int)</span><br><span class="line">    <span class="keyword">case</span> grade(Character)</span><br><span class="line">&#125;</span><br><span class="line">var score = Score.points(<span class="number">96</span>)</span><br><span class="line">score = .grade(<span class="string">"A"</span>)</span><br><span class="line">switch score &#123;</span><br><span class="line"><span class="keyword">case</span> let .points(point):</span><br><span class="line">    print(point)</span><br><span class="line"><span class="keyword">case</span> .grade(var grade):</span><br><span class="line">    grade = <span class="string">"B"</span></span><br><span class="line">    print(grade)</span><br><span class="line">&#125;/<span class="regexp">/B</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/Program ended with exit code: 0</span></span><br></pre></td></tr></table></figure>
+<p>可在.points前面整体定义 它定义什么类型，那三个变量就是什么类型，var 或let,也可以单独定义比如.grade<br>关联值是存储在枚举变量内存里面的</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Password &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="built_in">number</span>(<span class="built_in">Int</span>,<span class="built_in">Int</span>,<span class="built_in">Int</span>,<span class="built_in">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> gesture(<span class="built_in">String</span>)</span><br><span class="line">&#125;</span><br><span class="line">var pwd = Password.<span class="built_in">number</span>(<span class="number">5</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">6</span>)</span><br><span class="line">pwd = .gesture(<span class="string">"13456"</span>)</span><br><span class="line"><span class="keyword">switch</span> pwd &#123;</span><br><span class="line"><span class="keyword">case</span> let .<span class="built_in">number</span>(n1, n2, n3, n4):</span><br><span class="line">    print(n1,n2,n3,n4)</span><br><span class="line"><span class="keyword">case</span>  .gesture(let gesture):</span><br><span class="line">    print(gesture)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>密码有数字密码和手势密码,这两种方式是固定的,对于有限固定值我们定义成枚举,但是每个人定义设定的数字和手势密码都不同,那我们就定义几个关联值,与这个枚举进行关联</p>
+        
+          <a class="article-more-a" href="/2019/08/28/swift枚举/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/28/swift枚举/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift-可选项-Optional" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
