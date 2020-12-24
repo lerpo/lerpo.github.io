@@ -152,6 +152,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift-结构体和类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/01/swift-结构体和类/">swift 结构体和类</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/01/swift-结构体和类/" class="archive-article-date">
+  	<time datetime="2019-09-01T02:40:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-结构体"><a href="#一-结构体" class="headerlink" title="一 结构体"></a>一 结构体</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  struct Date &#123;</span><br><span class="line">    var year: Int</span><br><span class="line">    var month: Int</span><br><span class="line">    var day: Int</span><br><span class="line">&#125;</span><br><span class="line">var date = Date(year: <span class="number">2019</span>, month: <span class="number">6</span>, day: <span class="number">20</span>)</span><br><span class="line">print(date.year,date.month,date.day)<span class="regexp">//</span><span class="number">2019</span> <span class="number">6</span> <span class="number">20</span></span><br><span class="line"><span class="regexp">//</span>Program ended with <span class="keyword">exit</span> code: <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>swift标准库中，绝大多数的公开类型都是结构体，枚举只占很小一部分，像，Bool, Int, Double, String, Array, Dictionary等常见类型都是结构体</p>
+<h5 id="二-结构体的初始化器"><a href="#二-结构体的初始化器" class="headerlink" title="二 结构体的初始化器"></a>二 结构体的初始化器</h5><p><img src="../assets/blogImg/jiegouti01.png" alt></p>
+<p>❌错误改正图片中最后一个date4 要改成date5，提示是对的</p>
+<p>所有的结构体都有一个编译器自动生成的初始化器（initializer）</p>
+<p>编译器会根据情况，可能会为结构体生成多个初始化器，<strong>它要保证所有成员都有初始值</strong></p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">struct <span class="built_in">Date</span> &#123;</span><br><span class="line">    var <span class="built_in">year</span>: <span class="built_in">Int</span>?</span><br><span class="line">    var <span class="built_in">month</span>: <span class="built_in">Int</span>?</span><br><span class="line">    var <span class="built_in">day</span>: <span class="built_in">Int</span>?</span><br><span class="line">&#125;</span><br><span class="line">var <span class="built_in">date</span> =  <span class="built_in">Date</span>(<span class="built_in">year</span>: <span class="number">2019</span>, <span class="built_in">month</span>: <span class="number">6</span>, <span class="built_in">day</span>: <span class="number">20</span>)</span><br><span class="line">var date2 = <span class="built_in">Date</span>(<span class="built_in">year</span>: <span class="number">2019</span>)</span><br><span class="line">var date3 = <span class="built_in">Date</span>(<span class="built_in">month</span>: <span class="number">6</span>)</span><br><span class="line">var date4 = <span class="built_in">Date</span>(<span class="built_in">day</span>: <span class="number">20</span>)</span><br><span class="line">var date5 = <span class="built_in">Date</span>()</span><br></pre></td></tr></table></figure>
+<p>这个会报错么，能编译通过么？？</p>
+<p>不会报错，可选项都有个默认值nil，编译器会生成多个初始化方法，同时它也能保证所有变量都有初始值</p>
+        
+          <a class="article-more-a" href="/2019/09/01/swift-结构体和类/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/01/swift-结构体和类/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift枚举" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -717,86 +801,9 @@
 
 
   
-    <article id="post-我是如何快速上手微信小程序开发的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/23/我是如何快速上手微信小程序开发的/">我是如何快速上手微信小程序开发的</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/23/我是如何快速上手微信小程序开发的/" class="archive-article-date">
-  	<time datetime="2017-08-23T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="一-如何创建一个微信小程序"><a href="#一-如何创建一个微信小程序" class="headerlink" title="一 如何创建一个微信小程序"></a>一 如何创建一个微信小程序</h6><h6 id="二-如何搭建小程序页面"><a href="#二-如何搭建小程序页面" class="headerlink" title="二 如何搭建小程序页面"></a>二 如何搭建小程序页面</h6><h6 id="三-小程序如何获取数据，处理逻辑"><a href="#三-小程序如何获取数据，处理逻辑" class="headerlink" title="三 小程序如何获取数据，处理逻辑"></a>三 小程序如何获取数据，处理逻辑</h6><h6 id="四-如何发布小程序应用"><a href="#四-如何发布小程序应用" class="headerlink" title="四 如何发布小程序应用"></a>四 如何发布小程序应用</h6><blockquote>
-<p>无论是前端开发，还是后端开发，时间长了，你总会能总结出它的一些规律的，对于前端开发主要就两条，页面展现，逻辑处理。如果是全流程开发的话，那就是，如何创建项目，页面如何实现，数据获取和逻辑处理如何实现，如何打包上线。移动端或者前端，基本开发流程就这个四个步骤。所以在在前端方面去学习新一门开发技术，只要你解决了这四个问题，那一切就OK了，下面我就讲一下，我在学习微信小程序开发，如何用这四步法快速上手开发的<br>
-        
-          <a class="article-more-a" href="/2017/08/23/我是如何快速上手微信小程序开发的/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/23/我是如何快速上手微信小程序开发的/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 

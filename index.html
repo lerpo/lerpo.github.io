@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift-内存管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/01/swift-内存管理/">swift 内存管理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/01/swift-内存管理/" class="archive-article-date">
+  	<time datetime="2019-12-01T13:24:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-内存管理概览"><a href="#一-内存管理概览" class="headerlink" title="一 内存管理概览"></a>一 内存管理概览</h5><p>跟OC一样,Swift 也是采用基于引用计数的ARC内存管理方案,这里讲的都是针对堆空间, Swift的ARC中有3种引用</p>
+<p>1  强引用(strong reference): 默认情况下,引用都是强引用</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">    deinit &#123;</span><br><span class="line">        print(<span class="string">"Person deinit"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">func test() &#123;</span><br><span class="line">    let <span class="selector-tag">p</span> = Person() <span class="comment">//强引用</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="number">1</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="number">2</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>2 弱引用(weak refernce): 通过weak定义弱引用</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">deinit</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Person deinit"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">weak</span> <span class="keyword">var</span> p:<span class="type">Person?</span> = <span class="type">Person</span>() <span class="comment">//强引用</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1</span>)</span><br><span class="line">test()</span><br><span class="line"><span class="built_in">print</span>(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>必须是可选类型的var,因为实例销毁后,ARC会自动将弱引用设置为nil,此外ARC自动给弱引用设置nil时,不会触发属性观察器<br>
+        
+          <a class="article-more-a" href="/2019/12/01/swift-内存管理/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/01/swift-内存管理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift-访问控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -722,90 +803,9 @@
 
 
   
-    <article id="post-swift-可选链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/25/swift-可选链/">swift 可选链</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/25/swift-可选链/" class="archive-article-date">
-  	<time datetime="2019-10-25T10:52:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> price  = <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> weight = <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name:<span class="type">String</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">var</span> dog:<span class="type">Dog</span> = <span class="type">Dog</span>()</span><br><span class="line">    <span class="keyword">var</span> car:<span class="type">Car?</span> = <span class="type">Car</span>()</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">age</span><span class="params">()</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="number">20</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"person eat"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">getName</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">subscript</span>(index:<span class="type">Int</span>)-&gt;<span class="type">Int</span>&#123;</span><br><span class="line">        index</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person: <span class="type">Person?</span> = <span class="type">Person</span>()</span><br><span class="line"><span class="keyword">var</span> age1 = person!.age()<span class="comment">//Int</span></span><br><span class="line"><span class="keyword">var</span> age2 = person?.age()<span class="comment">//Int?</span></span><br><span class="line"><span class="keyword">var</span> name = person?.name <span class="comment">//String?</span></span><br><span class="line"><span class="keyword">var</span> index = person?[<span class="number">6</span>]<span class="comment">//Int?</span></span><br><span class="line">person?.name = person?.getName() <span class="keyword">as</span>! <span class="type">String</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>如果可选项为nil,调用方法,下标,属性失败,结果为nil</li>
-<li>如果可选项不为nil,调用方法,下标,属性成功,结果会被包装成可选项</li>
-<li>如果结果本来就是可选项,不会进行再次包装</li>
-</ol>
-        
-          <a class="article-more-a" href="/2019/10/25/swift-可选链/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/25/swift-可选链/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
