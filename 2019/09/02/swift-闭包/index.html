@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="当前明月的博客">
 <meta property="og:description" content="一 闭包的定义1234567891011typealias Fn = (Int) -&amp;gt; Intfunc getFn() -&amp;gt;Fn &amp;#123;    var num = 0;    func plus(_ i:Int) -&amp;gt; Int&amp;#123;        num += i        return num    &amp;#125;    return plus&amp;#125; //">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-12-24T13:50:48.355Z">
+<meta property="og:updated_time" content="2020-12-24T14:03:42.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift 闭包">
 <meta name="twitter:description" content="一 闭包的定义1234567891011typealias Fn = (Int) -&amp;gt; Intfunc getFn() -&amp;gt;Fn &amp;#123;    var num = 0;    func plus(_ i:Int) -&amp;gt; Int&amp;#123;        num += i        return num    &amp;#125;    return plus&amp;#125; //">
@@ -224,7 +224,7 @@
 <p>其实逃逸闭包,非逃逸闭包,一般都是当作参数传递给函数</p>
 <p>逃逸闭包还有一些注意事项⚠️</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typealias</span> <span class="type">Fn</span> = () -&gt; ()</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">other1</span><span class="params">(<span class="number">_</span> fn: Fn)</span></span> &#123; fn() &#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">other2</span><span class="params">(<span class="number">_</span> fn: @escaping Fn)</span></span> &#123; fn() &#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test</span><span class="params">(value: <span class="keyword">inout</span> Int)</span></span> -&gt; <span class="type">Fn</span> &#123;</span><br><span class="line">other1 &#123; value += <span class="number">1</span> &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">// ❌error: 逃逸闭包不能捕获inout参数</span></span><br><span class="line">other2 &#123; value += <span class="number">1</span> &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">plus</span><span class="params">()</span></span> &#123; value += <span class="number">1</span> &#125;</span><br><span class="line"><span class="comment">// ❌error: 逃逸闭包不能捕获inout参数 return plus</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>逃逸闭包不可以捕获inout参数</p>
+<p>逃逸闭包不可以捕获inout参数,因为逃逸闭包在哪调用是不确定的,如果一个逃逸闭包捕获了一个局部变量,那么当这个局部变量销毁了,你再调用闭包就会出错,非逃逸闭包捕获inout参数不会报错,那是因为非逃逸闭包调用的作用域是确定的.</p>
 
       
 
