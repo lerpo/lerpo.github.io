@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://example.com">
-  <title>当前明月的博客</title>
+  <title>swift 指针 | 当前明月的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="移动端，前端，后端，运维，全都会，如果你认为啥都会就等于啥都不会，那你就错了，哥不仅会还精通，你说气人不。">
 <meta name="keywords" content="前端,js,jquery,javascript,html5,移动端,ios,android,react native,vue.js,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="当前明月的博客">
-<meta property="og:url" content="http://example.com/page/4/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="swift 指针">
+<meta property="og:url" content="http://example.com/2020/12/26/swift-指针/index.html">
 <meta property="og:site_name" content="当前明月的博客">
 <meta property="og:description" content="移动端，前端，后端，运维，全都会，如果你认为啥都会就等于啥都不会，那你就错了，哥不仅会还精通，你说气人不。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-12-26T13:37:34.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="当前明月的博客">
+<meta name="twitter:title" content="swift 指针">
 <meta name="twitter:description" content="移动端，前端，后端，运维，全都会，如果你认为啥都会就等于啥都不会，那你就错了，哥不仅会还精通，你说气人不。">
   
     <link rel="alternative" href="/atom.xml" title="当前明月的博客" type="application/atom+xml">
@@ -150,32 +151,26 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-微信小程序小票打印功能（以及中文乱码的解决）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-swift-指针" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/10/微信小程序小票打印功能（以及中文乱码的解决）/">微信小程序小票打印功能（以及中文乱码的解决）</a>
+    <h1 class="article-title" itemprop="name">
+      swift 指针
     </h1>
   
 
         
-        <a href="/2018/11/10/微信小程序小票打印功能（以及中文乱码的解决）/" class="archive-article-date">
-  	<time datetime="2018-11-10T08:07:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-10</time>
+        <a href="/2020/12/26/swift-指针/" class="archive-article-date">
+  	<time datetime="2020-12-26T13:37:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>因为业务需求，需要实现微信小程序连接热敏打印机打印小票。首先我要先知道微信小程序有没有蓝牙操作相关的API，然后就是如何蓝牙连接打印机，发送打印指令了。</p>
-<p>通过查看<a href="[https://developers.weixin.qq.com/miniprogram/dev/api/wx.writeBLECharacteristicValue.html](https://developers.weixin.qq.com/miniprogram/dev/api/wx.writeBLECharacteristicValue.html">小程序文档</a><br>)，我看到微信小程序是支持蓝牙操作的<br><img src="https://upload-images.jianshu.io/upload_images/1972799-8f242641e7154fc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="小程序文档"><br>但是我看到它有两个，低功耗蓝牙，蓝牙。蓝牙我们知道，低功耗蓝牙是什么东西，网上查了下，解释如下：<br>以前可能有蓝牙1.0、蓝牙2.0、蓝牙3.0、蓝牙4.0之类的以数字结尾的蓝牙版本号，而实际上，在最新的标准中，已经不再使用数字版本号作为蓝牙版本的区分了，取而代之的是经典蓝牙与低功耗蓝牙（BLE）这两种区别<br>低功耗蓝牙（<strong>Bluetooth Low Energy</strong>，或称<strong>Bluetooth LE</strong>、<strong>BLE</strong>，旧商标<strong>Bluetooth Smart</strong>）也称<strong>低功耗蓝牙</strong>，是<a href="https://baike.baidu.com/item/%E8%93%9D%E7%89%99%E6%8A%80%E6%9C%AF%E8%81%94%E7%9B%9F" target="_blank" rel="noopener">蓝牙技术联盟</a>设计和销售的一种个人局域网技术，旨在用于医疗保健、<a href="https://baike.baidu.com/item/%E8%BF%90%E5%8A%A8%E5%81%A5%E8%BA%AB" target="_blank" rel="noopener">运动健身</a>、信标、安防、家庭娱乐等领域的新兴应用。相较经典蓝牙，低功耗蓝牙旨在保持同等通信范围的同时显著降低功耗和成本.<br>
-        
-          <a class="article-more-a" href="/2018/11/10/微信小程序小票打印功能（以及中文乱码的解决）/#more">more >></a>
         
       
 
@@ -184,30 +179,78 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/10/微信小程序小票打印功能（以及中文乱码的解决）/">展开全文 >></a>
-        </p>
-      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3a0U7DMAxG4b7/SxeJK9BoOL/dIeqcXFVZR/MVyXPsHAce5+d4vb6a+Tr/Ol4/vZq5eciQIeOxjHM5yD1XsPWy1s/ia5MhQ8Y+DBJkyYLW968XTYL75bwMGTJkgHSwFl558JUhQ4YMziCLSDerMmTIkEEYZCnk+t607y17cRkyZDyQ0WkMvPv6j/obMmTI+MeMMxwpj4fXtAnx7VsyZMgYzahtIEnc4/fc9hQZMmQMZaSNyVro5H8tTRZ/+N2QIUPGOAbZspKgTIIsbyHwnwEZMmTsxqg1GvsNy/T1yZAhY09GuqXkB7zSmVpQliFDxmxG7bhDLQVMi3TBBluGDBkbMHiQ5Wkcb2oWS2m8aihDhoyHM3gqlhbgagll7ayXDBkydmB02pY8QPeboMGWW4YMGYMY5KbakYt+skgCqwwZMnZgpIMvnR8L678IGTJkzGaky0pbm7VCXhx8ZciQMZqRLr02XwvBaflPhgwZsxm89N9pQNa+G5TtZMiQMZRRa0NyPGlPpm2Jy02sDBkyNmCQYj1J2u4qrgUNCRkyZIxm1JK5fqg9SgP9MMiQIWMc4wxHWrLvpJJBQJchQ8ZoRu2YBX8wP37BT4W0zozIkCHjsYxOkO0gU94v/wEZMmRswEhbiZ1l8VYEX60MGTJkrIMgP6JRq+QHqaEMGTJklJK8Trs0eEEyZMjYgME3sfwIV9pNbT1dhgwZoxmdxkANw3m19FSGDBmDGB90/2WrZEB3NgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/01/swift-内存管理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">swift 内存管理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -227,89 +270,21 @@
 
 
 
-
-  
-    <article id="post-我是如何快速上手微信小程序开发的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/23/我是如何快速上手微信小程序开发的/">我是如何快速上手微信小程序开发的</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/23/我是如何快速上手微信小程序开发的/" class="archive-article-date">
-  	<time datetime="2017-08-23T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="一-如何创建一个微信小程序"><a href="#一-如何创建一个微信小程序" class="headerlink" title="一 如何创建一个微信小程序"></a>一 如何创建一个微信小程序</h6><h6 id="二-如何搭建小程序页面"><a href="#二-如何搭建小程序页面" class="headerlink" title="二 如何搭建小程序页面"></a>二 如何搭建小程序页面</h6><h6 id="三-小程序如何获取数据，处理逻辑"><a href="#三-小程序如何获取数据，处理逻辑" class="headerlink" title="三 小程序如何获取数据，处理逻辑"></a>三 小程序如何获取数据，处理逻辑</h6><h6 id="四-如何发布小程序应用"><a href="#四-如何发布小程序应用" class="headerlink" title="四 如何发布小程序应用"></a>四 如何发布小程序应用</h6><blockquote>
-<p>无论是前端开发，还是后端开发，时间长了，你总会能总结出它的一些规律的，对于前端开发主要就两条，页面展现，逻辑处理。如果是全流程开发的话，那就是，如何创建项目，页面如何实现，数据获取和逻辑处理如何实现，如何打包上线。移动端或者前端，基本开发流程就这个四个步骤。所以在在前端方面去学习新一门开发技术，只要你解决了这四个问题，那一切就OK了，下面我就讲一下，我在学习微信小程序开发，如何用这四步法快速上手开发的<br>
-        
-          <a class="article-more-a" href="/2017/08/23/我是如何快速上手微信小程序开发的/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/23/我是如何快速上手微信小程序开发的/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+  
+
+  
+  <div id="SOHUCS" sid="swift-指针" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cyvbEQ6D8"; 
+var conf = "be2b4b2a63a385b7fba1ba8872fdeae0"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
   
 
 
@@ -332,8 +307,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
