@@ -172,6 +172,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p>swift中也有专门的指针类型,这些都被定性为“unsafe”(不安全的),常见的有以下4种类型:</p>
+<ol>
+<li>UnsafePointer<pointee>类似于const Pointee *</pointee></li>
+<li>UnsafeMutablePointer<pointee> 类似于Pointee *</pointee></li>
+<li>UnsafeRawPointer类似于 const void *</li>
+<li>UnsafeMutableRawPointer 类似于void *</li>
+</ol>
+<p>下面我们一一讲解这四种类型</p>
+<h5 id="一-UnsafePointer"><a href="#一-UnsafePointer" class="headerlink" title="一 UnsafePointer"></a>一 UnsafePointer<pointee></pointee></h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test</span><span class="params">(<span class="number">_</span> ptr: UnsafePointer&lt;Int&gt;)</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"变量地址:"</span>, ptr)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"变量存放的内容:"</span>,ptr.pointee)</span><br><span class="line">&#125;</span><br><span class="line">test(&amp;age)</span><br><span class="line"><span class="comment">//变量地址: 0x0000000100002048</span></span><br><span class="line"><span class="comment">//变量存放的内容: 10</span></span><br></pre></td></tr></table></figure>
+<p>UnsafePointer只用来去访问内存,支持泛型,不可以去修改内存,对于一个变量它指向的是变量的内存地址</p>
+<h5 id="二-UnsafeMutablePointer"><a href="#二-UnsafeMutablePointer" class="headerlink" title="二 UnsafeMutablePointer"></a>二 UnsafeMutablePointer</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> age = <span class="number">10</span></span><br><span class="line">func test(_ ptr: UnsafeMutablePointer&lt;Int&gt;) &#123;</span><br><span class="line">    print(<span class="string">"变量地址:"</span>, ptr)</span><br><span class="line">    print(<span class="string">"变量存放的内容:"</span>,ptr.pointee)</span><br><span class="line">    ptr<span class="selector-class">.pointee</span> = <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">test</span><span class="params">(&amp;age)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(age)</span></span></span><br><span class="line"><span class="comment">//变量地址: 0x0000000100002048</span></span><br><span class="line"><span class="comment">//变量存放的内容: 10</span></span><br><span class="line"><span class="comment">//20</span></span><br></pre></td></tr></table></figure>
+<p>UnsafePointer用来去访问内存,支持泛型,可以去修改内存,对于一个变量它指向的是变量的内存地址<br>
+        
+          <a class="article-more-a" href="/2019/12/05/swift-指针/#more">more >></a>
         
       
 
