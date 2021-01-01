@@ -152,6 +152,172 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swift-模式匹配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/10/swift-模式匹配/">swift 模式匹配</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/10/swift-模式匹配/" class="archive-article-date">
+  	<time datetime="2019-12-10T10:51:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-模式定义"><a href="#一-模式定义" class="headerlink" title="一 模式定义"></a>一 模式定义</h5><p>模式是用于匹配的规则,比如switch的case, 捕捉错误的catch, if\guard\while\for语句的条件等,swift中的模式有</p>
+<ol>
+<li><strong>通配符模式</strong></li>
+<li><strong>标识符模式</strong></li>
+<li><strong>值绑定模式</strong></li>
+<li><strong>元组模式</strong></li>
+<li><strong>枚举Case模式</strong></li>
+<li><strong>可选模式</strong></li>
+<li><strong>类型转换模式</strong></li>
+<li><strong>表达式模式</strong></li>
+</ol>
+<p>下面让我们一一讲解这些模式<br>
+        
+          <a class="article-more-a" href="/2019/12/10/swift-模式匹配/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/10/swift-模式匹配/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-swift-字面量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/07/swift-字面量/">swift 字面量</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/07/swift-字面量/" class="archive-article-date">
+  	<time datetime="2019-12-07T05:53:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="一-字面量"><a href="#一-字面量" class="headerlink" title="一 字面量"></a>一 字面量</h5><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">10</span></span><br><span class="line"><span class="keyword">var</span> isBlue = <span class="literal">false</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"Lisa"</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码中的10,false,“Jack”就是字面量,那字面量它们都是属于什么类型呢,请接着往下看</p>
+<h5 id="二-字面量类型"><a href="#二-字面量类型" class="headerlink" title="二 字面量类型"></a>二 字面量类型</h5><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">typealias</span> Float32 = <span class="built_in">Float</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">typealias</span> Float64 = <span class="built_in">Double</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">typealias</span> IntegerLiteralType = <span class="built_in">Int</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">typealias</span> FloatLiteralType = <span class="built_in">Double</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">typealias</span> BooleanLiteralType = Bool</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">typealias</span> StringLiteralType = String</span><br></pre></td></tr></table></figure>
+<p>swift 自带的绝大部分类型,都支持直接通过字面量进行初始化,比如: Bool, Int, Float, Double,String,Array, Dictionary,Set,Optional等, 我们可以通过typealias修改字面量的默认类型<br>
+        
+          <a class="article-more-a" href="/2019/12/07/swift-字面量/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/07/swift-字面量/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-swift-指针" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -639,179 +805,6 @@
 
 
   
-    <article id="post-swift-错误处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/swift-错误处理/">swift 错误处理</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/20/swift-错误处理/" class="archive-article-date">
-  	<time datetime="2019-11-20T12:50:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-开发中常见的错误"><a href="#一-开发中常见的错误" class="headerlink" title="一 开发中常见的错误"></a>一 开发中常见的错误</h5><ul>
-<li>语法错误</li>
-</ul>
-<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">10</span></span><br><span class="line">age += <span class="number">20</span> <span class="comment">//❌</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>逻辑错误</li>
-</ul>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if age &gt; <span class="number">10</span> &#123;</span><br><span class="line">    age = <span class="number">10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>运行时错误(闪退,异常等)</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">func</span> <span class="title">divide</span><span class="params">(<span class="number">_</span> num1:Int, <span class="number">_</span> num2:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    num1 / num2</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(divide(<span class="number">10</span>, <span class="number">0</span>))</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/11/20/swift-错误处理/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/20/swift-错误处理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-swift-元类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/15/swift-元类型/">swift 元类型</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/15/swift-元类型/" class="archive-article-date">
-  	<time datetime="2019-11-15T12:52:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="一-初识元类型"><a href="#一-初识元类型" class="headerlink" title="一 初识元类型"></a>一 初识元类型</h5><p>swift提供了两种特殊的类型:<strong>Any</strong>, <strong>AnyObject</strong></p>
-<ul>
-<li><strong>Any</strong>: 可以代表任意类型</li>
-</ul>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> stu:Any = <span class="number">10</span></span><br><span class="line">stu = <span class="string">"Jack"</span></span><br><span class="line">stu = Student()</span><br></pre></td></tr></table></figure>
-<p>stu是Any类型,赋值给它啥都行</p>
-<ul>
-<li><strong>AnyObject</strong>:可以代表任意类类型</li>
-</ul>
-<figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">protocol Runnable:<span class="keyword">AnyObject</span> &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="keyword">Person</span>: <span class="keyword">Runnable</span> &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="keyword">Size</span>: <span class="keyword">Runnable</span> &#123; //❌</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在协议后面写上AnyObect 代表只有类才能遵守这个协议</p>
-        
-          <a class="article-more-a" href="/2019/11/15/swift-元类型/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/15/swift-元类型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -826,7 +819,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 当前明月
+    		&copy; 2021 当前明月
     	</div>
       	<div class="footer-right">
       		<a> 转载请署上本文链接</a>
