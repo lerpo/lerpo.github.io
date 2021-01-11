@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="当前明月的博客">
 <meta property="og:description" content="Swift是Apple在2014年6月WWDC发布的全新编程语言，中文名和LOGO是“雨燕” Swift之父Chris Lattner pClang编译器作者、LLVM项目的主要发起人 从Apple离职后，先后跳槽到Tesla、Google p目前在Google Brain从事AI研究  历时5年发展，从Swift1.x发展到了Swift5.x版本，经历了多次重大改变，ABI终于稳定 API(A">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://example.com/2019/07/20/assets/blogImg/binyiliucheng1.png">
-<meta property="og:image" content="http://example.com/2019/07/20/assets/blogImg/bianyiliucheng2.png">
-<meta property="og:updated_time" content="2020-12-05T06:41:26.859Z">
+<meta property="og:image" content="http://example.com/assets/blogImg/binyiliucheng1.png">
+<meta property="og:image" content="http://example.com/assets/blogImg/bianyiliucheng2.png">
+<meta property="og:updated_time" content="2021-01-11T13:53:48.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift简介">
 <meta name="twitter:description" content="Swift是Apple在2014年6月WWDC发布的全新编程语言，中文名和LOGO是“雨燕” Swift之父Chris Lattner pClang编译器作者、LLVM项目的主要发起人 从Apple离职后，先后跳槽到Tesla、Google p目前在Google Brain从事AI研究  历时5年发展，从Swift1.x发展到了Swift5.x版本，经历了多次重大改变，ABI终于稳定 API(A">
-<meta name="twitter:image" content="http://example.com/2019/07/20/assets/blogImg/binyiliucheng1.png">
+<meta name="twitter:image" content="http://example.com/assets/blogImg/binyiliucheng1.png">
   
     <link rel="alternative" href="/atom.xml" title="当前明月的博客" type="application/atom+xml">
   
@@ -179,8 +179,8 @@
 </blockquote>
 <p>历时5年发展，从Swift1.x发展到了Swift5.x版本，经历了多次重大改变，<strong>ABI</strong>终于稳定 <strong>API(Application Programming Interface)</strong>:应用程序编程接口</p>
 <p>源代码和库之间的接口<br>ABI(Application Binary Interface):应用程序二进制接口<br> 应用程序与操作系统之间的底层接口<br>涉及的内容有: <strong>目标文件格式、数据类型的大小\布局\对齐、函数调用约定等等 </strong>  随着ABI的稳定，Swift语法基本不会再有太大的变动,截止至2019年6月，目前最新版本:Swift5.1<br>Swift完全开源: <a href="https://github.com/apple/swift" target="_blank" rel="noopener">https://github.com/apple/swift</a>，主要采用C++编写</p>
-<h5 id="一-swift-编译流程"><a href="#一-swift-编译流程" class="headerlink" title="一  swift 编译流程"></a>一  swift 编译流程</h5><p><img src="../assets/blogImg/binyiliucheng1.png" alt="编译流程"><br>首先我们要知道编译器分为前端和后端：<br>前端：词法分析<br>后端：生成对应平台的二进制代码</p>
-<p>Swift与OC和C的编译流程区别：C和OC编译器的前端是Clang，也就是以前的OC代码通过Clang这个编译器的前端进行处理，转交给LLVM这个编译器的后端，最后生成ARM的二进制代码。而Swift的编译器的前端是swiftc，通过swiftc进行词法分析和语法树处理，然后交给LLVM的后端编译器，最后生成ARM格式的二进制代码<br><img src="../assets/blogImg/bianyiliucheng2.png" alt="编译流程"><br>Swift代码–&gt;通过swiftc生成Swift AST(Swift语法树)–&gt;Raw Swift IL(Swift特有的中间代码)–&gt;Canonical Swift IL(更简洁的Swift代码)–&gt;转交给后端生成LLVM代码–&gt;Assembly(汇编代码)–&gt;Executable(二进制代码)<br><a href="https://swift.org/swift-compiler/" target="_blank" rel="noopener">每个阶段具体介绍</a></p>
+<h5 id="一-swift-编译流程"><a href="#一-swift-编译流程" class="headerlink" title="一  swift 编译流程"></a>一  swift 编译流程</h5><p><img src="/assets/blogImg/binyiliucheng1.png" alt="编译流程"><br>首先我们要知道编译器分为前端和后端：<br>前端：词法分析<br>后端：生成对应平台的二进制代码</p>
+<p>Swift与OC和C的编译流程区别：C和OC编译器的前端是Clang，也就是以前的OC代码通过Clang这个编译器的前端进行处理，转交给LLVM这个编译器的后端，最后生成ARM的二进制代码。而Swift的编译器的前端是swiftc，通过swiftc进行词法分析和语法树处理，然后交给LLVM的后端编译器，最后生成ARM格式的二进制代码<br><img src="/assets/blogImg/bianyiliucheng2.png" alt="编译流程"><br>Swift代码–&gt;通过swiftc生成Swift AST(Swift语法树)–&gt;Raw Swift IL(Swift特有的中间代码)–&gt;Canonical Swift IL(更简洁的Swift代码)–&gt;转交给后端生成LLVM代码–&gt;Assembly(汇编代码)–&gt;Executable(二进制代码)<br><a href="https://swift.org/swift-compiler/" target="_blank" rel="noopener">每个阶段具体介绍</a></p>
 <a id="more"></a>
 <h5 id="二-swiftc"><a href="#二-swiftc" class="headerlink" title="二 swiftc"></a>二 swiftc</h5><p>Swift的编译器的前端是swiftc，通过swiftc进行词法分析和语法树处理,我们可以使用它提供的一些命令对swift文件进行一些操作.</p>
 <ul>

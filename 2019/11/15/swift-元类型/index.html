@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="当前明月的博客">
 <meta property="og:description" content="一 初识元类型swift提供了两种特殊的类型:Any, AnyObject  Any: 可以代表任意类型  123456  class Student&amp;#123;    &amp;#125;var stu:Any = 10stu = &quot;Jack&quot;stu = Student() stu是Any类型,赋值给它啥都行  AnyObject:可以代表任意类类型  123456789protocol Runnabl">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://example.com/2019/11/15/assets/blogImg/yuanleixing01.png">
-<meta property="og:updated_time" content="2020-12-19T09:50:34.537Z">
+<meta property="og:image" content="http://example.com/assets/blogImg/yuanleixing01.png">
+<meta property="og:updated_time" content="2021-01-11T13:50:43.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift 元类型">
 <meta name="twitter:description" content="一 初识元类型swift提供了两种特殊的类型:Any, AnyObject  Any: 可以代表任意类型  123456  class Student&amp;#123;    &amp;#125;var stu:Any = 10stu = &quot;Jack&quot;stu = Student() stu是Any类型,赋值给它啥都行  AnyObject:可以代表任意类类型  123456789protocol Runnabl">
-<meta name="twitter:image" content="http://example.com/2019/11/15/assets/blogImg/yuanleixing01.png">
+<meta name="twitter:image" content="http://example.com/assets/blogImg/yuanleixing01.png">
   
     <link rel="alternative" href="/atom.xml" title="当前明月的博客" type="application/atom+xml">
   
@@ -192,7 +192,7 @@
 <li>X.self属于X.Type类型</li>
 </ol>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> s = Student()</span><br><span class="line"><span class="keyword">var</span> pType:Student.<span class="built_in">Type</span> = Student.self <span class="comment">//X.self属于X.Type类型</span></span><br></pre></td></tr></table></figure>
-<p><img src="../assets/blogImg/yuanleixing01.png" alt> pType 指向的就是s地址内容的前8个字节</p>
+<p><img src="/assets/blogImg/yuanleixing01.png" alt> pType 指向的就是s地址内容的前8个字节</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> :<span class="title">Person</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> anyType: <span class="type">AnyObject</span>.<span class="type">Type</span> = <span class="type">Person</span>.<span class="keyword">self</span></span><br><span class="line">anyType = <span class="type">Student</span>.<span class="keyword">self</span></span><br></pre></td></tr></table></figure>
 <p>父类类型可以指向子类类型</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> :<span class="title">Person</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">typealias</span> <span class="type">AnyClass</span> = <span class="type">AnyObject</span>.<span class="type">Type</span></span><br><span class="line"><span class="keyword">var</span> anyType:<span class="type">AnyClass</span> = <span class="type">Person</span>.<span class="keyword">self</span></span><br><span class="line">anyType = <span class="type">Student</span>.<span class="keyword">self</span></span><br></pre></td></tr></table></figure>
