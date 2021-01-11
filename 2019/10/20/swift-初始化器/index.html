@@ -16,18 +16,18 @@
 <meta property="og:site_name" content="当前明月的博客">
 <meta property="og:description" content="一 初始化器种类(只针对一类)12345678910111213141516struct Ract &amp;#123;    var width:Int = 0    var height:Int = 0    init(width:Int) &amp;#123;        self.width = width    &amp;#125;&amp;#125;class Size &amp;#123;    var width:In">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://example.com/2019/10/20/assets/blogImg/chushihua01.png">
-<meta property="og:image" content="http://example.com/2019/10/20/assets/blogImg/chushihua02.png">
-<meta property="og:image" content="http://example.com/2019/10/20/assets/blogImg/chushihua03.png">
-<meta property="og:image" content="http://example.com/2019/10/20/assets/blogImg/chushihua04.png">
-<meta property="og:image" content="http://example.com/2019/10/20/assets/blogImg/chushihua05.png">
-<meta property="og:image" content="http://example.com/2019/10/20/assets/blogImg/chushihua06.png">
-<meta property="og:image" content="http://example.com/2019/10/20/assets/blogImg/chushihua03.png">
-<meta property="og:updated_time" content="2020-12-12T09:14:34.353Z">
+<meta property="og:image" content="http://example.com/assets/blogImg/chushihua01.png">
+<meta property="og:image" content="http://example.com/assets/blogImg/chushihua02.png">
+<meta property="og:image" content="http://example.com/assets/blogImg/chushihua03.png">
+<meta property="og:image" content="http://example.com/assets/blogImg/chushihua04.png">
+<meta property="og:image" content="http://example.com/assets/blogImg/chushihua05.png">
+<meta property="og:image" content="http://example.com/assets/blogImg/chushihua06.png">
+<meta property="og:image" content="http://example.com/assets/blogImg/chushihua03.png">
+<meta property="og:updated_time" content="2021-01-11T13:41:12.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift 初始化器">
 <meta name="twitter:description" content="一 初始化器种类(只针对一类)12345678910111213141516struct Ract &amp;#123;    var width:Int = 0    var height:Int = 0    init(width:Int) &amp;#123;        self.width = width    &amp;#125;&amp;#125;class Size &amp;#123;    var width:In">
-<meta name="twitter:image" content="http://example.com/2019/10/20/assets/blogImg/chushihua01.png">
+<meta name="twitter:image" content="http://example.com/assets/blogImg/chushihua01.png">
   
     <link rel="alternative" href="/atom.xml" title="当前明月的博客" type="application/atom+xml">
   
@@ -197,8 +197,8 @@
 <li>便捷初始化器必须从同一个类里调用另一个初始化器</li>
 <li>便捷初始化器最终必须要调用一个指定初始化器</li>
 </ol>
-<p>下面是初始化器相互调用流程图<br><img src="../assets/blogImg/chushihua01.png" alt><br><img src="../assets/blogImg/chushihua02.png" alt><br>这一套流程,保证了,我们使用任意的初始化,都可以完整的初始化实例</p>
-<h5 id="三-两段式初始化"><a href="#三-两段式初始化" class="headerlink" title="三 两段式初始化"></a>三 两段式初始化</h5><p><img src="../assets/blogImg/chushihua03.png" alt><br>为什么在supper.init之前调用方法或者或则修改继承的属性都会报错呢? 下面就要牵扯到了swift,初始化的两个阶段了</p>
+<p>下面是初始化器相互调用流程图<br><img src="/assets/blogImg/chushihua01.png" alt><br><img src="/assets/blogImg/chushihua02.png" alt><br>这一套流程,保证了,我们使用任意的初始化,都可以完整的初始化实例</p>
+<h5 id="三-两段式初始化"><a href="#三-两段式初始化" class="headerlink" title="三 两段式初始化"></a>三 两段式初始化</h5><p><img src="/assets/blogImg/chushihua03.png" alt><br>为什么在supper.init之前调用方法或者或则修改继承的属性都会报错呢? 下面就要牵扯到了swift,初始化的两个阶段了</p>
 <h6 id="第一阶段-初始化所有存储属性"><a href="#第一阶段-初始化所有存储属性" class="headerlink" title="第一阶段: 初始化所有存储属性"></a>第一阶段: 初始化所有存储属性</h6><ol>
 <li>外层调用指定或者便捷初始化器</li>
 <li>分配内存给实例, 但未初始化</li>
@@ -212,13 +212,13 @@
 </ol>
 <p>通过两段式初始化调用流程,我们可以解释下为什么上面报错了,supper.init之前调用方法,此时类的存储属性还有未进行初始化的,也就是说第一阶段还未完成,此时self是不能使用的,只有第一阶段完成,才能使用</p>
 <h5 id="四-初始化的安全检查"><a href="#四-初始化的安全检查" class="headerlink" title="四 初始化的安全检查"></a>四 初始化的安全检查</h5><ol>
-<li><p>指定初始化器必须保证在调用父类初始化之前,其所在类定义的所有存储属性都要初始化完成<br><img src="../assets/blogImg/chushihua04.png" alt></p>
+<li><p>指定初始化器必须保证在调用父类初始化之前,其所在类定义的所有存储属性都要初始化完成<br><img src="/assets/blogImg/chushihua04.png" alt></p>
 </li>
-<li><p>指定初始化器必须先调用父类初始化器,然后才能为继承的属性设置新值<br><img src="../assets/blogImg/chushihua05.png" alt></p>
+<li><p>指定初始化器必须先调用父类初始化器,然后才能为继承的属性设置新值<br><img src="/assets/blogImg/chushihua05.png" alt></p>
 </li>
-<li><p>便捷初始化器必须先调用同类中的其他初始化器,然后再为任意属性设置新值<br><img src="../assets/blogImg/chushihua06.png" alt></p>
+<li><p>便捷初始化器必须先调用同类中的其他初始化器,然后再为任意属性设置新值<br><img src="/assets/blogImg/chushihua06.png" alt></p>
 </li>
-<li><p>初始化器在第一阶段初始化完成之前,不能调用任何实例方法,不能对区任何实例属性的值,也不能引用self<br><img src="../assets/blogImg/chushihua03.png" alt></p>
+<li><p>初始化器在第一阶段初始化完成之前,不能调用任何实例方法,不能对区任何实例属性的值,也不能引用self<br><img src="/assets/blogImg/chushihua03.png" alt></p>
 </li>
 </ol>
 <h5 id="五-重写初始化器"><a href="#五-重写初始化器" class="headerlink" title="五 重写初始化器"></a>五 重写初始化器</h5><p>方法名称,参数个数,参数类型,参数标签都相同即为重写<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> age:<span class="built_in">Int</span></span><br><span class="line">    <span class="keyword">init</span>(age:<span class="built_in">Int</span>) &#123;</span><br><span class="line">        self.age = age</span><br><span class="line">    &#125;</span><br><span class="line">    convenience <span class="keyword">init</span>()&#123;</span><br><span class="line">        self.<span class="keyword">init</span>(age:<span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Studen</span>: <span class="type">Person &#123;</span></span></span><br><span class="line">    <span class="keyword">var</span> score: <span class="built_in">Int</span></span><br><span class="line">    <span class="keyword">var</span> grade:<span class="built_in">Int</span></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>(age: <span class="built_in">Int</span>) &#123;</span><br><span class="line">        self.score = <span class="number">0</span></span><br><span class="line">        self.grade = <span class="number">0</span></span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(age: age)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
